@@ -1,0 +1,8 @@
+# .gitignore
+
+# Ignore the following files
+example_dogs.json
+ignore.py
+# Ignore the .idea directory
+.idea/
+__pycache__/

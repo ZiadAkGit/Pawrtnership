@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Pawfect Match</title>
+</head>
+
+<body>
+    <div class="dog-list-container">
+        <h2 id="welcoming_message"></h2>
+        <div class="dog-details-container" id="dogDetailsContainer"></div>
+        <ul id="dogList">
+
+        </ul>
+        <br>
+    </div>
+    <div class="add-dog-container">
+        <h2>Add a Dog</h2>
+        <form id="addDogForm">
+            <label for="dogName">Name:</label>
+            <input type="text" id="dogName" required>
+            <label for="dogBreed">Breed:</label>
+            <input type="text" id="dogBreed" required>
+            <label for="dogTemperament">Temperament:</label>
+            <input type="text" id="dogTemperament">
+            <label for="dogEnergy">Energy:</label>
+            <input type="text" id="dogEnergy">
+            <label for="dogDescription">Description:</label>
+            <textarea rows="4" cols="50" id="dogDescription"></textarea>
+            </br>
+            <button type="button" onclick="addDog()">Add Dog</button>
+        </form>
+    </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
