@@ -18,7 +18,6 @@ def dogs_data():
         dog_name = row
         dog_description = data[row]['description']
         dog_temperament = data[row]['temperament']
-        # dog_energy = data[row]['energy']
         dog_breed = data[row]['breed']
         dog_age = data[row]['age']
         dog_attributes = data[row]['attributes']
