@@ -1,9 +1,31 @@
 body {
     font-family: 'Arial', sans-serif;
     margin: 0 auto;
-    width: fit-content;
     background-color: #f0f0f0;
-    max-width: 40rem;
+    max-width: 40dvw;
+}
+
+header {
+    background-color: #f0f0f0;
+    text-align: center;
+    max-width: 20dvw;
+    margin: 0 auto;
+    padding-bottom: 3cqb;
+}
+
+header a {
+    display: inline-block;
+    padding: 10px 20px;
+    color: #333;
+    font-weight: bold;
+}
+
+header a:hover {
+    color: #2ecc71;
+}
+
+header a.active {
+    color: #2ecc71;
 }
 
 .container {
@@ -13,17 +35,6 @@ body {
     border-radius: 10px;
     background-color: #fff;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-}
-
-#welcoming_message {
-    color: #333;
-    font-style: italic;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-}
-
-h2 {
-    color: #000000;
-    font-family: 'Times New Roman', Times, serif;
 }
 
 form {
@@ -93,10 +104,10 @@ li:hover {
 }
 
 .add-dog-container {
-    display: none;
+    display: block;
     background-color: #f0f0f0;
-    padding: 20px;
-    border-radius: 10px;
+    padding: 10px;
+    border-radius: 14px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     margin: 0 auto;
     width: fit-content;
@@ -104,4 +115,14 @@ li:hover {
 
 .add-dog-container form {
     margin-top: 0;
+}
+
+.login-container {
+    margin: 0 auto;
+    text-align: center;
+    width: 15dvw;
+}
+
+.login-container form {
+    padding-top: 20px;
 }

@@ -1,6 +1,14 @@
 const currentHost = window.location.hostname;
 const currentProtocol = window.location.protocol;
 const h1_welcome = document.getElementById("welcoming_message");
+var currentPage = window.location.href;
+if (currentPage.includes("dashboard.html")) {
+    document.getElementById("dashboardLink").classList.add("active");
+} else if (currentPage.includes("quiz.html")) {
+    document.getElementById("quizLink").classList.add("active");
+} else if (currentPage.includes("dogs.html")) {
+    document.getElementById("dogsLink").classList.add("active");
+}
 
 async function get_users(username, password) {
     try {
@@ -12,7 +20,7 @@ async function get_users(username, password) {
         return result;
     } catch (error) {
         console.error('Error:', error);
-        throw error;
+        return error;
     }
 }
 
@@ -20,13 +28,12 @@ async function get_users(username, password) {
 function getData() {
     const dogListContainer = document.getElementById("dogList");
     dogListContainer.innerHTML = "";
-    document.getElementsByClassName("add-dog-container")[0].style.display = "block";
     fetch(`${currentProtocol}//${currentHost}:5000/api/data`)
         .then(response => response.json())
         .then(data => {
             const username = data["username"];
             const dogs = data["dogs"];
-            h1_welcome.innerText = `Hello ${username}, Your dogs list is below:`;
+            console.log(`Hey ${username}, Don't even try!`);
             Object.entries(dogs).forEach(dog => {
                 dog_name = dog[0]
                 dog_breed = dog[1]["breed"];
@@ -49,11 +56,15 @@ function getData() {
 async function login() {
     const usernameInput = document.getElementById("username").value;
     const passwordInput = document.getElementById("password").value;
-    const values = await get_users(usernameInput, passwordInput);
-    if (values == "OK") {
-        window.location.href = "dogs.html";
+    if (usernameInput && passwordInput) {
+        const values = await get_users(usernameInput, passwordInput);
+        if (values == "OK") {
+            window.location.href = "dashboard.html";
+        } else {
+            alert(`Error: ${values}`);
+        }
     } else {
-        alert(values);
+        alert("Fill in Username and Password!");
     }
 }
 
@@ -112,6 +123,7 @@ function addDog() {
             .then(responseData => {
                 if (responseData == "OK") {
                     console.log("Data has been stored!");
+                    alert("Dog has been added\nGo to the Dashboard screen to see your paw friend 🐾");
                     dogListContainer.appendChild(listItem);
                     document.getElementById("dogName").value = "";
                     document.getElementById("dogBreed").value = "";
@@ -142,15 +154,18 @@ async function checkAuthentication() {
     return check;
 }
 
-if (window.location.href.includes("dogs.html")) {
+if (window.location.href.includes("dashboard.html")) {
+    console.log("We are at Dashboard!");
     checkAuthentication().then(data => {
         if (data) {
             getData();
         }
         else {
-            window.location.replace("index.html");
+            // window.location.replace("index.html");
+            console.log(`Data is: ${data}`);
         }
+    }).catch(function (error) {
+        alert("Error accord\nPlease login again", console.log(error));
+        window.location.replace("index.html");
     });
-} else {
-    alert("Please login to move forward")
 }
