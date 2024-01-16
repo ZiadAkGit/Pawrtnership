@@ -42,6 +42,36 @@ def get_data():
     return dogs_data()
 
 
+@app.route('/api/submit_quiz', methods=['POST'])
+def quiz_submission():
+    client_attributes = json.loads(request.get_data())
+    score_100 = []
+    score_75 = []
+    score_50 = []
+    for i in backend.dogs:
+        if backend.dogs.get(i)['attributes'] == client_attributes:
+            score_100.append(i)
+        else:
+            for j in backend.dogs.get(i)['attributes']:
+                if backend.dogs.get(i)["attributes"][j] == client_attributes[j]:
+                    score_75.append(i)
+                else:
+                    score_50.append(i)
+    best_dogs = list(dict.fromkeys(score_100))
+    second_option = list(dict.fromkeys(score_75))
+    last_option = list(dict.fromkeys(score_50))
+    if len(best_dogs) > 0:
+        backend.choices = best_dogs
+    elif len(second_option) >= 5:
+        backend.choices = second_option[0:5]
+    else:
+        backend.choices = last_option[0:5]
+    print(f'top choices are: {best_dogs}\n\n'
+          f'second choices are: {second_option}\n\n'
+          f'last is: {last_option}')
+    return backend.choices
+
+
 @app.route('/api/add_dog', methods=['POST'])
 def add_dog():
     dog = json.loads(request.get_data())
@@ -60,7 +90,6 @@ def add_dog():
             ]
         )
         dog_attributes = attributes.choices[0].message.content
-        print(dog_attributes)
         backend.dogs[dog_name] = {"description": dog_description, "breed": dog_breed, "age": dog_age,
                                   "temperament": dog_temperament, "attributes": json.loads(dog_attributes)}
         write_json(dog_name, backend.dogs.get(dog_name))
@@ -97,7 +126,7 @@ def user_check():
 def get_users():
     username = request.get_data(as_text=True).split(',')[0]
     password = request.get_data(as_text=True).split(',')[1]
-    print(f'User: {username} tried to login using {password}')
+    # print(f'User: {username} tried to login using {password}')
     # TODO add database with sql so the table can be updated
     if username in backend.users.values():
         if username == backend.users.get(password):

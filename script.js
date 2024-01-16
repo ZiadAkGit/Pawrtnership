@@ -28,7 +28,29 @@ async function get_users(username, password) {
 }
 
 function submitQuiz() {
-	alert("Quiz submitted!");
+	const user_choices = {};
+	const inputs = document.getElementsByTagName("input");
+	for (let i = 0; i < inputs.length; i++) {
+		if (inputs[i].checked) {
+			user_choices[inputs[i].name] = parseInt(inputs[i].value);
+		}
+	}
+	fetch(`${currentProtocol}//${currentHost}:5000/api/submit_quiz`, {
+		method: "POST",
+		headers: {
+			"Content-Type": "application/json",
+		},
+		body: JSON.stringify(user_choices),
+	})
+		.then((response) => response.text())
+		.then((responseData) => {
+			if (responseData.startsWith("[")) {
+				const choices = JSON.parse(responseData);
+				console.log(choices);
+				alert(`Quiz submitted!\nTop Choices are: ${choices}`);
+				window.location.reload();
+			} else alert(responseData);
+		});
 }
 
 function getData() {
