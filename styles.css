@@ -1,143 +1,174 @@
 body {
-    font-family: 'Arial', sans-serif;
-    margin: 0 auto;
-    background-color: #f0f0f0;
-    max-width: 40dvw;
+	font-family: "Arial", sans-serif;
+	margin: 0 auto;
+	background-color: #f0f0f0;
+	max-width: 40dvw;
 }
 
 b {
-    display: block;
-    font-weight: bold;
+	display: block;
+	font-weight: bold;
 }
 
 header {
-    background-color: #f0f0f0;
-    text-align: center;
-    max-width: 20dvw;
-    margin: 0 auto;
-    padding-bottom: 3cqb;
+	background-color: #f0f0f0;
+	text-align: center;
+	max-width: 20dvw;
+	margin: 0 auto;
+	padding-bottom: 3cqb;
 }
 
 header a {
-    display: inline-block;
-    padding: 10px 20px;
-    color: #333;
-    font-weight: bold;
+	display: inline-block;
+	padding: 10px 20px;
+	color: #333;
+	font-weight: bold;
 }
 
 header a:hover {
-    color: #2ecc71;
+	color: #2ecc71;
 }
 
 header a.active {
-    color: #2ecc71;
+	color: #2ecc71;
 }
 
 .container {
-    max-width: 600px;
-    margin: 20px auto;
-    padding: 20px;
-    border-radius: 10px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	max-width: 600px;
+	margin: 20px auto;
+	padding: 20px;
+	border-radius: 10px;
+	background-color: #fff;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 form {
-    margin-top: 20px;
-    text-align: center;
+	margin-top: 20px;
+	text-align: center;
 }
 
 label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 8px;
-    color: #555;
-    text-align: left;
+	display: block;
+	font-weight: bold;
+	margin-bottom: 8px;
+	color: #555;
+	text-align: left;
+}
+
+#quiz_body {
+	font-family: "Arial", sans-serif;
+	margin: 0 auto;
+}
+
+#quiz-container {
+	max-width: 600px;
+	margin: auto;
+}
+
+.question {
+	margin-bottom: 15px;
+}
+
+.options {
+	display: flex;
+	justify-content: space-between;
+}
+
+input[type="radio"] {
+	margin-right: 5px;
+}
+
+#submit-btn {
+	margin-top: 20px;
+	padding: 10px;
+	background-color: #4caf50;
+	color: #fff;
+	border: none;
+	cursor: pointer;
 }
 
 input {
-    width: 100%;
-    padding: 10px;
-    margin-bottom: 15px;
-    border: 1px solid #ccc;
-    border-radius: 7px;
-    box-sizing: border-box;
+	width: 100%;
+	padding: 10px;
+	margin-bottom: 15px;
+	border: 1px solid #ccc;
+	border-radius: 7px;
+	box-sizing: border-box;
 }
 
 textarea {
-    height: fit-content;
-    width: fit-content;
-    display: block;
-    border: 1px solid #ccc;
-    border-radius: 14px;
-    margin: 0 auto;
-    padding: 0.5rem;
+	height: fit-content;
+	width: fit-content;
+	display: block;
+	border: 1px solid #ccc;
+	border-radius: 14px;
+	margin: 0 auto;
+	padding: 0.5rem;
 }
 
 button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #4caf50;
-    color: #fff;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+	display: inline-block;
+	padding: 10px 20px;
+	background-color: #4caf50;
+	color: #fff;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
 }
 
 button:hover {
-    background-color: #45a049;
+	background-color: #45a049;
 }
 
 ul {
-    list-style: none;
-    padding: 0;
-    margin-top: 20px;
+	list-style: none;
+	padding: 0;
+	margin-top: 20px;
 }
 
 .dog_breed {
-    background-color: #fff;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    margin-bottom: 10px;
-    cursor: pointer;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	background-color: #fff;
+	padding: 10px;
+	border: 1px solid #ddd;
+	border-radius: 5px;
+	margin-bottom: 10px;
+	cursor: pointer;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 .dog_breed:hover {
-    background-color: #f5f5f5;
+	background-color: #f5f5f5;
 }
 
-
 #dogs_attributes {
-    list-style-type: disc;
-    margin: 0 auto;
+	list-style-type: disc;
+	margin: 0 auto;
 }
 
 #dogs_attributes li {
-    margin: 0 auto;
+	margin: 0 auto;
 }
 
 .add-dog-container {
-    display: block;
-    background-color: #f0f0f0;
-    padding: 10px;
-    border-radius: 14px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    margin: 0 auto;
-    width: fit-content;
+	display: block;
+	background-color: #f0f0f0;
+	padding: 10px;
+	border-radius: 14px;
+	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+	margin: 0 auto;
+	width: fit-content;
 }
 
 .add-dog-container form {
-    margin-top: 0;
+	margin-top: 0;
 }
 
 .login-container {
-    margin: 0 auto;
-    text-align: center;
-    width: 15dvw;
+	margin: 0 auto;
+	text-align: center;
+	width: 15dvw;
 }
 
 .login-container form {
-    padding-top: 20px;
+	padding-top: 20px;
 }
