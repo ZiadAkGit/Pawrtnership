@@ -38,9 +38,11 @@ function getData() {
                 dog_name = dog[0]
                 dog_breed = dog[1]["breed"];
                 dog_description = dog[1]["description"];
-                dog_energy = dog[1]["energy"];
                 dog_temperament = dog[1]["temperament"];
+                dog_age = dog[1]["age"];
+                dog_attributes = dog[1]["attributes"];
                 const listItem = document.createElement("li");
+                listItem.className = "dog_breed";
                 listItem.textContent = `${dog_name} the ${dog_breed}`;
                 listItem.onclick = () => showDogDetails(dog);
                 dogListContainer.appendChild(listItem);
@@ -74,19 +76,25 @@ function showDogDetails(dog) {
     dog_name = dog[0];
     dog_breed = dog[1]["breed"];
     dog_description = dog[1]["description"];
-    dog_energy = dog[1]["energy"];
     dog_temperament = dog[1]["temperament"];
+    dog_age = dog[1]["age"];
+    dog_attributes = dog[1]["attributes"];
     if (dog) {
         window.scrollTo({
             top: 0,
             behavior: 'smooth'
         });
         dogDetailsContainer.innerHTML = `
-            <h2>${dog_name}</h2> 
+            <h2>${dog_name} - ${dog_age} years old</h2> 
             <p><b>Breed:</b> ${dog_breed}</p>
-            <p><b>Temp:</b> ${dog_temperament}</p>
-            <p><b>Energy:</b> ${dog_energy}</p>
             <p><b>Description:</b> ${dog_description}</p>
+            <ul id="dogs_attributes"><b>Attributes: </b>
+            <li class="dogs_attributes">Enegry Level: ${dog_attributes["energy_level"]}</li>
+            <li class="dogs_attributes">Intelligence Level: ${dog_attributes["intelligence"]}</li>
+            <li class="dogs_attributes">Playfulness Level: ${dog_attributes["playfulness"]}</li>
+            <li class="dogs_attributes">Temperament Level: ${dog_attributes["temperament"]}</li>
+            <li class="dogs_attributes">Trainability Level: ${dog_attributes["trainability"]}</li>
+            </ul>
         `;
     }
 }
@@ -97,7 +105,7 @@ function addDog() {
     const dogBreedInput = document.getElementById("dogBreed").value;
     const dogDescriptionInput = document.getElementById("dogDescription").value;
     const dogTemperamentInput = document.getElementById("dogTemperament").value;
-    const dogEnergyInput = document.getElementById("dogEnergy").value;
+    const dogAge = document.getElementById("dogage").value;
     if (dogNameInput && dogBreedInput) {
         const dogListContainer = document.getElementById("dogList");
         const listItem = document.createElement("li");
@@ -106,11 +114,13 @@ function addDog() {
                 dogNameInput,
                 {
                     "description": dogDescriptionInput,
-                    "energy": dogEnergyInput,
                     "temperament": dogTemperamentInput,
-                    "breed": dogBreedInput
+                    "breed": dogBreedInput,
+                    "age": dogAge
                 }
             ]
+        console.log(dog);
+        listItem.className = "dog_breed";
         listItem.textContent = `${dogNameInput} the ${dogBreedInput}`;
         listItem.onclick = () => showDogDetails(dog);
         fetch(`${currentProtocol}//${currentHost}:5000/api/add_dog`, {
@@ -129,7 +139,7 @@ function addDog() {
                     document.getElementById("dogBreed").value = "";
                     document.getElementById("dogDescription").value = "";
                     document.getElementById("dogTemperament").value = "";
-                    document.getElementById("dogEnergy").value = "";
+                    document.getElementById("dogage").value = "";
                 } else
                     alert(responseData);
             });
@@ -155,7 +165,6 @@ async function checkAuthentication() {
 }
 
 if (window.location.href.includes("dashboard.html")) {
-    console.log("We are at Dashboard!");
     checkAuthentication().then(data => {
         if (data) {
             getData();

@@ -1,11 +1,13 @@
 from flask import Flask, request
 from flask_cors import CORS
 
+import openai as openai
 import ignore as backend
 import json
 
 app = Flask(__name__)
 CORS(app)
+openai.api_key = backend.openai_key
 
 
 def dogs_data():
@@ -16,10 +18,12 @@ def dogs_data():
         dog_name = row
         dog_description = data[row]['description']
         dog_temperament = data[row]['temperament']
-        dog_energy = data[row]['energy']
+        # dog_energy = data[row]['energy']
         dog_breed = data[row]['breed']
-        backend.dogs[dog_name] = {"description": dog_description, "temperament": dog_temperament, "energy": dog_energy,
-                                  "breed": dog_breed}
+        dog_age = data[row]['age']
+        dog_attributes = data[row]['attributes']
+        backend.dogs[dog_name] = {"description": dog_description, "temperament": dog_temperament,
+                                  "breed": dog_breed, "age": dog_age, "attributes": dog_attributes}
     file.close()
     username = str(backend.logged_users.get(request.remote_addr)).split(',')[0]
     data = {
@@ -47,12 +51,30 @@ def add_dog():
     dog_name = dog[0]
     dog_description = dog[1]['description']
     dog_temperament = dog[1]['temperament']
-    dog_energy = dog[1]['energy']
+    # dog_energy = dog[1]['energy']
     dog_breed = dog[1]['breed']
+    dog_age = dog[1]['age']
+    attributes = openai.chat.completions.create(
+        model="gpt-4-1106-preview",
+        messages=[
+            {"role": "system", "content": "act as a dog shelter admin, you should rate each dog that "
+                                          "comes in like this template below:"
+                                          "'energy_level': 1, "
+                                          "'playfulness': 2, "
+                                          "'intelligence': 3, "
+                                          "'temperament': 4, "
+                                          "'trainability': 5"
+                                          "i will give you description for some dogs, and based on this description "
+                                          "fill in the need things, answer by giving the template only!"},
+            {"role": "user", "content": f'Description: {dog_description}\nMore data: {dog_temperament}'}
+        ]
+    )
+    dog_attributes = {attributes.choices[0].message.content}
+    print(dog_attributes)
     # TODO add database with sql so the table can be updated
     if not backend.dogs.get(dog_name):
-        backend.dogs[dog_name] = {"description": dog_description, "temperament": dog_temperament, "energy": dog_energy,
-                                  "breed": dog_breed}
+        backend.dogs[dog_name] = {"description": dog_description, "breed": dog_breed, "age": dog_age,
+                                  "temperament": dog_temperament, "attributes": dog_attributes}
         write_json(dog_name, backend.dogs.get(dog_name))
         return "OK"
     else:

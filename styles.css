@@ -5,6 +5,11 @@ body {
     max-width: 40dvw;
 }
 
+b {
+    display: block;
+    font-weight: bold;
+}
+
 header {
     background-color: #f0f0f0;
     text-align: center;
@@ -89,7 +94,7 @@ ul {
     margin-top: 20px;
 }
 
-li {
+.dog_breed {
     background-color: #fff;
     padding: 10px;
     border: 1px solid #ddd;
@@ -99,8 +104,18 @@ li {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
-li:hover {
+.dog_breed:hover {
     background-color: #f5f5f5;
+}
+
+
+#dogs_attributes {
+    list-style-type: disc;
+    margin: 0 auto;
+}
+
+#dogs_attributes li {
+    margin: 0 auto;
 }
 
 .add-dog-container {
