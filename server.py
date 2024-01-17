@@ -75,7 +75,10 @@ def quiz_submission():
     else:
         backend.choices = max_last
         print(f'Last Option: {max_last}')
-    return backend.choices
+    chosen_dogs = {}
+    for dog in backend.choices:
+        chosen_dogs[dog] = backend.dogs.get(dog)
+    return json.dumps(chosen_dogs)
 
 
 @app.route('/api/add_dog', methods=['POST'])
