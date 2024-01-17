@@ -1,5 +1,8 @@
+import random
+
 from flask import Flask, request
 from flask_cors import CORS
+from collections import Counter
 
 import openai as openai
 import ignore as backend
@@ -57,18 +60,21 @@ def quiz_submission():
                     score_75.append(i)
                 else:
                     score_50.append(i)
-    best_dogs = list(dict.fromkeys(score_100))
-    second_option = list(dict.fromkeys(score_75))
-    last_option = list(dict.fromkeys(score_50))
+    best_dogs = dict(Counter(score_100))
+    second_option = dict(Counter(score_75))
+    last_option = dict(Counter(score_50))
+    max_best = [dog for dog, count in best_dogs.items() if count == max(best_dogs.values())]
+    max_second = [dog for dog, count in second_option.items() if count == max(second_option.values())]
+    max_last = [dog for dog, count in last_option.items() if count == max(last_option.values())]
     if len(best_dogs) > 0:
-        backend.choices = best_dogs
+        backend.choices = max_best
+        print(f'Best Option: {max_best}')
     elif len(second_option) >= 5:
-        backend.choices = second_option[0:5]
+        backend.choices = max_second
+        print(f'Second Option: {max_second}')
     else:
-        backend.choices = last_option[0:5]
-    print(f'top choices are: {best_dogs}\n\n'
-          f'second choices are: {second_option}\n\n'
-          f'last is: {last_option}')
+        backend.choices = max_last
+        print(f'Last Option: {max_last}')
     return backend.choices
 
 
