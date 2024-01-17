@@ -1,479 +1,479 @@
 {
-  "Max": {
-    "description": "Labrador Retrievers are friendly, outgoing, and high-spirited dogs known for their intelligence and good nature.",
-    "temperament": "Friendly",
-    "energy": "High energy",
-    "breed": "Labrador Retriever",
-    "attributes": {
-      "energy_level": 5,
-      "playfulness": 4,
-      "intelligence": 3,
-      "temperament": 5,
-      "trainability": 2
-    },
-    "age": 6
-  },
-  "Bella": {
-    "description": "German Shepherds are courageous, confident, and smart. They are extremely faithful and have a high learning ability.",
-    "temperament": "Confident",
-    "energy": "Moderate to high energy",
-    "breed": "German Shepherd",
-    "attributes": {
-      "energy_level": 1,
-      "playfulness": 2,
-      "intelligence": 3,
-      "temperament": 4,
-      "trainability": 5
-    },
-    "age": 9
-  },
-  "Charlie": {
-    "description": "Golden Retrievers are intelligent, friendly, and devoted. They are one of the most popular dog breeds in the United States.",
-    "temperament": "Devoted",
-    "energy": "Moderate energy",
-    "breed": "Golden Retriever",
-    "attributes": {
-      "energy_level": 3,
-      "playfulness": 4,
-      "intelligence": 5,
-      "temperament": 5,
-      "trainability": 3
-    },
-    "age": 2
-  },
-  "Lucy": {
-    "description": "Poodles are known for their intelligence and elegance. They come in three sizes: standard, miniature, and toy.",
-    "temperament": "Intelligent",
-    "energy": "Moderate energy",
-    "breed": "Poodle",
-    "attributes": {
-      "energy_level": 2,
-      "playfulness": 1,
-      "intelligence": 3,
-      "temperament": 4,
-      "trainability": 5
-    },
-    "age": 7
-  },
-  "Rocky": {
-    "description": "Bulldogs are known for their loose, saggy skin, distinctive pushed-in nose, and characteristic undershot jaw.",
-    "temperament": "Docile",
-    "energy": "Low energy",
-    "breed": "Bulldog",
-    "attributes": {
-      "energy_level": 3,
-      "playfulness": 4,
-      "intelligence": 5,
-      "temperament": 5,
-      "trainability": 3
-    },
-    "age": 11
-  },
-  "Luna": {
-    "description": "Beagles are friendly, curious, and great with kids. They have a strong sense of smell and were originally bred for hunting.",
-    "temperament": "Curious",
-    "energy": "Moderate to high energy",
-    "breed": "Beagle",
-    "attributes": {
-      "energy_level": 2,
-      "playfulness": 1,
-      "intelligence": 3,
-      "temperament": 5,
-      "trainability": 4
-    },
-    "age": 4
-  },
-  "Shadow": {
-    "description": "Siberian Huskies are known for their thick double coat and striking facial masks. They are energetic and friendly.",
-    "temperament": "Energetic",
-    "energy": "High energy",
-    "breed": "Siberian Husky",
-    "attributes": {
-      "energy_level": 5,
-      "playfulness": 5,
-      "intelligence": 4,
-      "temperament": 3,
-      "trainability": 2
-    },
-    "age": 8
-  },
-  "Dez N": {
-    "description": "Dachshunds are known for their long bodies and short legs. They are clever, lively, and good family dogs.",
-    "temperament": "Clever",
-    "energy": "Moderate energy",
-    "breed": "Dachshund",
-    "attributes": {
-      "energy_level": 1,
-      "playfulness": 2,
-      "intelligence": 3,
-      "temperament": 4,
-      "trainability": 5
-    },
-    "age": 13
-  },
-  "Zeus": {
-    "description": "Boxers are playful, energetic, and good with families. They are medium to large dogs with strong, muscular builds.",
-    "temperament": "Playful",
-    "energy": "High energy",
-    "breed": "Boxer",
-    "attributes": {
-      "energy_level": 3,
-      "playfulness": 4,
-      "intelligence": 5,
-      "temperament": 5,
-      "trainability": 3
-    },
-    "age": 5
-  },
-  "Ruby": {
-    "description": "Pitbulls are strong, muscular dogs known for their loyalty and intelligence. They can be friendly and affectionate with proper training and socialization.",
-    "temperament": "Loyal",
-    "energy": "High energy",
-    "breed": "Pitbull",
-    "attributes": {
-      "energy_level": 5,
-      "playfulness": 4,
-      "intelligence": 3,
-      "temperament": 5,
-      "trainability": 2
-    },
-    "age": 10
-  },
-  "Coco": {
-    "description": "Chihuahuas are small dogs with big personalities. They are alert, bold, and often bond closely with their owners.",
-    "temperament": "Alert",
-    "energy": "Moderate energy",
-    "breed": "Chihuahua",
-    "attributes": {
-      "energy_level": 2,
-      "playfulness": 1,
-      "intelligence": 3,
-      "temperament": 4,
-      "trainability": 5
-    },
-    "age": 3
-  },
-  "Teddy": {
-    "description": "Shih Tzus are affectionate, friendly, and outgoing. They have a distinctive long, flowing coat and a friendly disposition.",
-    "temperament": "Affectionate",
-    "energy": "Moderate energy",
-    "breed": "Shih Tzu",
-    "attributes": {
-      "energy_level": 2,
-      "playfulness": 1,
-      "intelligence": 3,
-      "temperament": 5,
-      "trainability": 4
-    },
-    "age": 12
-  },
-  "Milo": {
-    "description": "Great Danes are giant dogs known for their imposing size. Despite their size, they are known for being gentle and friendly.",
-    "temperament": "Gentle",
-    "energy": "Moderate to low energy",
-    "breed": "Great Dane",
-    "attributes": {
-      "energy_level": 1,
-      "playfulness": 2,
-      "intelligence": 3,
-      "temperament": 4,
-      "trainability": 5
-    },
-    "age": 8
-  },
-  "Baxter": {
-    "description": "Baxter is a unique and creative dog breed with a plush, multicolored coat resembling a fluffy cloud. Known for its playful and curious nature, Baxter loves interactive toys and needs daily mental stimulation. Due to its unique fur, regular grooming is essential to keep Baxter's coat in top shape.",
-    "temperament": "Playful and Curious",
-    "energy": "Moderate to High energy",
-    "breed": "Cloud Dog",
-    "special_needs": "Regular grooming for the fluffy coat, interactive toys for mental stimulation",
-    "attributes": {
-      "energy_level": 4,
-      "playfulness": 5,
-      "intelligence": 4,
-      "temperament": 5,
-      "trainability": 3
-    },
-    "age": 6
-  },
-  "Maxim": {
-    "description": "Maxim is a mysterious and relaxed Pitbull, known for his calm demeanor and sleepy disposition. His energy level is on the tranquil side, making him an ideal companion for a laid-back lifestyle.",
-    "temperament": "Relaxed, Sleepy",
-    "energy": "Low energy",
-    "breed": "Pitbull",
-    "attributes": {
-      "energy_level": 1,
-      "playfulness": 2,
-      "intelligence": 3,
-      "temperament": 4,
-      "trainability": 5
-    },
-    "age": 9
-  },
-  "Belle": {
-    "description": "Belle is a beautiful brown Pitbull, three years old, and an absolute sweetheart. She enjoys relaxing and sleeping, but don't let that fool you, she has bursts of energy and needs regular exercises to stay happy and healthy.",
-    "temperament": "Relaxed, Sleepy, Friendly",
-    "energy": "Energetic, Needs Exercises",
-    "breed": "Pitbull",
-    "attributes": {
-      "energy_level": 3,
-      "playfulness": 4,
-      "intelligence": 5,
-      "temperament": 5,
-      "trainability": 3
-    },
-    "age": 3
-  },
-  "Sadie": {
-    "description": "Sadie is a spirited and lively Border Collie, known for her incredible intelligence and agility. She loves engaging activities and challenges to keep her sharp mind busy.",
-    "temperament": "Spirited, Lively",
-    "energy": "High energy",
-    "breed": "Border Collie",
-    "attributes": {
-      "energy_level": 5,
-      "playfulness": 5,
-      "intelligence": 5,
-      "temperament": 4,
-      "trainability": 5
-    },
-    "age": 9
-  },
-  "Oscar": {
-    "description": "Oscar is a laid-back and easygoing Basset Hound, recognized for his long ears and droopy eyes. He enjoys leisurely walks and relaxing in cozy spots around the house.",
-    "temperament": "Laid-back, Easygoing",
-    "energy": "Low energy",
-    "breed": "Basset Hound",
-    "attributes": {
-      "energy_level": 1,
-      "playfulness": 2,
-      "intelligence": 3,
-      "temperament": 5,
-      "trainability": 3
-    },
-    "age": 4
-  },
-  "Mia": {
-    "description": "Mia is an affectionate and gentle Shetland Sheepdog, known for her thick double coat and bright, watchful eyes. She forms strong bonds with her family and enjoys spending quality time together.",
-    "temperament": "Affectionate, Gentle",
-    "energy": "Moderate energy",
-    "breed": "Shetland Sheepdog",
-    "attributes": {
-      "energy_level": 3,
-      "playfulness": 4,
-      "intelligence": 5,
-      "temperament": 4,
-      "trainability": 4
-    },
-    "age": 2
-  },
-  "Leo": {
-    "description": "Leo is a majestic and noble Leonberger, admired for his large size and gentle nature. Despite his imposing appearance, Leo is a friendly giant who loves being around people.",
-    "temperament": "Majestic, Noble",
-    "energy": "Moderate energy",
-    "breed": "Leonberger",
-    "attributes": {
-      "energy_level": 2,
-      "playfulness": 3,
-      "intelligence": 4,
-      "temperament": 5,
-      "trainability": 4
-    },
-    "age": 8
-  },
-  "Lola": {
-    "description": "Lola is a spunky and vivacious Dalmatian, recognized for her distinctive black or liver spotted coat. She thrives on activities that allow her to burn off excess energy.",
-    "temperament": "Spunky, Vivacious",
-    "energy": "High energy",
-    "breed": "Dalmatian",
-    "attributes": {
-      "energy_level": 4,
-      "playfulness": 5,
-      "intelligence": 3,
-      "temperament": 4,
-      "trainability": 3
-    },
-    "age": 11
-  },
-  "Simba": {
-    "description": "Simba is a regal and dignified Basenji, known for his elegant posture and tightly curled tail. He is independent yet loyal to his family, with a keen sense of observation.",
-    "temperament": "Regal, Dignified",
-    "energy": "Moderate to High energy",
-    "breed": "Basenji",
-    "attributes": {
-      "energy_level": 3,
-      "playfulness": 4,
-      "intelligence": 4,
-      "temperament": 3,
-      "trainability": 3
-    },
-    "age": 13
-  },
-  "Coco Channel": {
-    "description": "Coco is a charming and affectionate Cavalier King Charles Spaniel, known for her silky coat and expressive eyes. She is a true companion dog, thriving on love and attention.",
-    "temperament": "Charming, Affectionate",
-    "energy": "Moderate energy",
-    "breed": "Cavalier King Charles Spaniel",
-    "attributes": {
-      "energy_level": 2,
-      "playfulness": 3,
-      "intelligence": 4,
-      "temperament": 5,
-      "trainability": 4
-    },
-    "age": 5
-  },
-  "Bentley": {
-    "description": "Bentley is a dignified and noble Great Dane, known for his imposing size and calm demeanor. Despite his giant stature, Bentley is gentle and enjoys lounging around the house.",
-    "temperament": "Dignified, Noble",
-    "energy": "Moderate to Low energy",
-    "breed": "Great Dane",
-    "attributes": {
-      "energy_level": 1,
-      "playfulness": 2,
-      "intelligence": 3,
-      "temperament": 4,
-      "trainability": 5
-    },
-    "age": 10
-  },
-  "Luna-Maria": {
-    "description": "Luna is a free-spirited and adventurous Alaskan Malamute, recognized for her fluffy double coat and striking wolf-like appearance. She thrives in outdoor activities and loves snowy landscapes.",
-    "temperament": "Free-spirited, Adventurous",
-    "energy": "High energy",
-    "breed": "Alaskan Malamute",
-    "attributes": {
-      "energy_level": 5,
-      "playfulness": 5,
-      "intelligence": 4,
-      "temperament": 3,
-      "trainability": 2
-    },
-    "age": 7
-  },
-  "Spider-Milo": {
-    "description": "Milo is a mischievous and energetic Jack Russell Terrier, known for his boundless enthusiasm and love for playful antics. He's always ready for a game of fetch or a speedy run around the yard.",
-    "temperament": "Mischievous, Energetic",
-    "energy": "High energy",
-    "breed": "Jack Russell Terrier",
-    "attributes": {
-      "energy_level": 4,
-      "playfulness": 5,
-      "intelligence": 4,
-      "temperament": 4,
-      "trainability": 3
-    },
-    "age": 2
-  },
-  "Daisy": {
-    "description": "Daisy is a sweet and gentle Labrador Retriever, known for her friendly disposition and love for water. She enjoys swimming and is always eager to please her family with her loyal and affectionate nature.",
-    "temperament": "Sweet, Gentle",
-    "energy": "High energy",
-    "breed": "Labrador Retriever",
-    "attributes": {
-      "energy_level": 5,
-      "playfulness": 4,
-      "intelligence": 3,
-      "temperament": 5,
-      "trainability": 2
-    },
-    "age": 4
-  },
-  "Mochi": {
-    "description": "Mochi is a playful and curious Shiba Inu, known for his fox-like appearance and spirited personality. He enjoys exploring the surroundings and engaging in interactive games with his family.",
-    "temperament": "Playful, Curious",
-    "energy": "Moderate to High energy",
-    "breed": "Shiba Inu",
-    "attributes": {
-      "energy_level": 3,
-      "playfulness": 4,
-      "intelligence": 5,
-      "temperament": 5,
-      "trainability": 3
-    },
-    "age": 11
-  },
-  "Ziggy Stardust": {
-    "description": "Ziggy Stardust is a charismatic and outgoing Corgi, known for his distinctive markings and joyful demeanor. He loves being the center of attention and has a talent for charming everyone he meets.",
-    "temperament": "Charismatic, Outgoing",
-    "energy": "Moderate energy",
-    "breed": "Corgi",
-    "attributes": {
-      "energy_level": 3,
-      "playfulness": 5,
-      "intelligence": 4,
-      "temperament": 5,
-      "trainability": 4
-    },
-    "age": 6
-  },
-  "Rosie": {
-    "description": "Rosie is a gentle and affectionate Boxer, known for her expressive eyes and playful nature. She forms strong bonds with her family and is always up for a game of fetch or a cozy nap on the couch.",
-    "temperament": "Gentle, Affectionate",
-    "energy": "High energy",
-    "breed": "Boxer",
-    "attributes": {
-      "energy_level": 4,
-      "playfulness": 5,
-      "intelligence": 4,
-      "temperament": 5,
-      "trainability": 3
-    },
-    "age": 8
-  },
-  "Lily": {
-    "description": "Lily is a gentle and affectionate Cocker Spaniel, known for her silky ears and sweet disposition. She loves cuddling and enjoys short walks in the park.",
-    "temperament": "Gentle, Affectionate",
-    "energy": "Low to Moderate energy",
-    "breed": "Cocker Spaniel",
-    "attributes": {
-      "energy_level": 2,
-      "playfulness": 3,
-      "intelligence": 4,
-      "temperament": 5,
-      "trainability": 4
-    },
-    "age": 5
-  },
-  "Cooper": {
-    "description": "Cooper is an energetic and friendly Australian Shepherd, recognized for his striking blue merle coat and intelligence. He thrives on mental and physical stimulation.",
-    "temperament": "Energetic, Friendly",
-    "energy": "High energy",
-    "breed": "Australian Shepherd",
-    "attributes": {
-      "energy_level": 4,
-      "playfulness": 5,
-      "intelligence": 5,
-      "temperament": 4,
-      "trainability": 5
-    },
-    "age": 3
-  },
-  "Misty": {
-    "description": "Misty is a playful and curious Border Terrier, known for her wiry coat and lively personality. She enjoys digging and participating in agility activities.",
-    "temperament": "Playful, Curious",
-    "energy": "Moderate to High energy",
-    "breed": "Border Terrier",
-    "attributes": {
-      "energy_level": 3,
-      "playfulness": 5,
-      "intelligence": 4,
-      "temperament": 4,
-      "trainability": 3
-    },
-    "age": 2
-  },
-  "Rocky II": {
-    "description": "Rocky II is an athletic and loyal Rottweiler, known for his strong build and protective nature. He forms deep bonds with his family and excels in obedience training.",
-    "temperament": "Athletic, Loyal",
-    "energy": "High energy",
-    "breed": "Rottweiler",
-    "attributes": {
-      "energy_level": 4,
-      "playfulness": 4,
-      "intelligence": 5,
-      "temperament": 4,
-      "trainability": 4
-    },
-    "age": 6
-  }
+	"Max": {
+		"description": "Labrador Retrievers are friendly, outgoing, and high-spirited dogs known for their intelligence and good nature.",
+		"temperament": "Friendly",
+		"energy": "High energy",
+		"breed": "Labrador Retriever",
+		"attributes": {
+			"energy_level": 5,
+			"playfulness": 4,
+			"intelligence": 5,
+			"temperament": 4,
+			"trainability": 5
+		},
+		"age": 6
+	},
+	"Bella": {
+		"description": "German Shepherds are courageous, confident, and smart. They are extremely faithful and have a high learning ability.",
+		"temperament": "Confident",
+		"energy": "Moderate to high energy",
+		"breed": "German Shepherd",
+		"attributes": {
+			"energy_level": 1,
+			"playfulness": 2,
+			"intelligence": 4,
+			"temperament": 4,
+			"trainability": 5
+		},
+		"age": 9
+	},
+	"Charlie": {
+		"description": "Golden Retrievers are intelligent, friendly, and devoted. They are one of the most popular dog breeds in the United States.",
+		"temperament": "Devoted",
+		"energy": "Moderate energy",
+		"breed": "Golden Retriever",
+		"attributes": {
+			"energy_level": 3,
+			"playfulness": 4,
+			"intelligence": 5,
+			"temperament": 5,
+			"trainability": 3
+		},
+		"age": 2
+	},
+	"Lucy": {
+		"description": "Poodles are known for their intelligence and elegance. They come in three sizes: standard, miniature, and toy.",
+		"temperament": "Intelligent",
+		"energy": "Moderate energy",
+		"breed": "Poodle",
+		"attributes": {
+			"energy_level": 2,
+			"playfulness": 1,
+			"intelligence": 3,
+			"temperament": 4,
+			"trainability": 5
+		},
+		"age": 7
+	},
+	"Rocky": {
+		"description": "Bulldogs are known for their loose, saggy skin, distinctive pushed-in nose, and characteristic undershot jaw.",
+		"temperament": "Docile",
+		"energy": "Low energy",
+		"breed": "Bulldog",
+		"attributes": {
+			"energy_level": 3,
+			"playfulness": 4,
+			"intelligence": 5,
+			"temperament": 3,
+			"trainability": 2
+		},
+		"age": 11
+	},
+	"Luna": {
+		"description": "Beagles are friendly, curious, and great with kids. They have a strong sense of smell and were originally bred for hunting.",
+		"temperament": "Curious",
+		"energy": "Moderate to high energy",
+		"breed": "Beagle",
+		"attributes": {
+			"energy_level": 2,
+			"playfulness": 1,
+			"intelligence": 3,
+			"temperament": 5,
+			"trainability": 4
+		},
+		"age": 4
+	},
+	"Shadow": {
+		"description": "Siberian Huskies are known for their thick double coat and striking facial masks. They are energetic and friendly.",
+		"temperament": "Energetic",
+		"energy": "High energy",
+		"breed": "Siberian Husky",
+		"attributes": {
+			"energy_level": 5,
+			"playfulness": 5,
+			"intelligence": 4,
+			"temperament": 3,
+			"trainability": 2
+		},
+		"age": 8
+	},
+	"Dez N": {
+		"description": "Dachshunds are known for their long bodies and short legs. They are clever, lively, and good family dogs.",
+		"temperament": "Clever",
+		"energy": "Moderate energy",
+		"breed": "Dachshund",
+		"attributes": {
+			"energy_level": 1,
+			"playfulness": 2,
+			"intelligence": 3,
+			"temperament": 4,
+			"trainability": 5
+		},
+		"age": 13
+	},
+	"Zeus": {
+		"description": "Boxers are playful, energetic, and good with families. They are medium to large dogs with strong, muscular builds.",
+		"temperament": "Playful",
+		"energy": "High energy",
+		"breed": "Boxer",
+		"attributes": {
+			"energy_level": 3,
+			"playfulness": 4,
+			"intelligence": 5,
+			"temperament": 5,
+			"trainability": 3
+		},
+		"age": 5
+	},
+	"Ruby": {
+		"description": "Pitbulls are strong, muscular dogs known for their loyalty and intelligence. They can be friendly and affectionate with proper training and socialization.",
+		"temperament": "Loyal",
+		"energy": "High energy",
+		"breed": "Pitbull",
+		"attributes": {
+			"energy_level": 5,
+			"playfulness": 4,
+			"intelligence": 3,
+			"temperament": 5,
+			"trainability": 4
+		},
+		"age": 10
+	},
+	"Coco": {
+		"description": "Chihuahuas are small dogs with big personalities. They are alert, bold, and often bond closely with their owners.",
+		"temperament": "Alert",
+		"energy": "Moderate energy",
+		"breed": "Chihuahua",
+		"attributes": {
+			"energy_level": 2,
+			"playfulness": 1,
+			"intelligence": 3,
+			"temperament": 4,
+			"trainability": 5
+		},
+		"age": 3
+	},
+	"Teddy": {
+		"description": "Shih Tzus are affectionate, friendly, and outgoing. They have a distinctive long, flowing coat and a friendly disposition.",
+		"temperament": "Affectionate",
+		"energy": "Moderate energy",
+		"breed": "Shih Tzu",
+		"attributes": {
+			"energy_level": 2,
+			"playfulness": 1,
+			"intelligence": 3,
+			"temperament": 5,
+			"trainability": 4
+		},
+		"age": 12
+	},
+	"Milo": {
+		"description": "Great Danes are giant dogs known for their imposing size. Despite their size, they are known for being gentle and friendly.",
+		"temperament": "Gentle",
+		"energy": "Moderate to low energy",
+		"breed": "Great Dane",
+		"attributes": {
+			"energy_level": 1,
+			"playfulness": 2,
+			"intelligence": 3,
+			"temperament": 4,
+			"trainability": 5
+		},
+		"age": 8
+	},
+	"Baxter": {
+		"description": "Baxter is a unique and creative dog breed with a plush, multicolored coat resembling a fluffy cloud. Known for its playful and curious nature, Baxter loves interactive toys and needs daily mental stimulation. Due to its unique fur, regular grooming is essential to keep Baxter's coat in top shape.",
+		"temperament": "Playful and Curious",
+		"energy": "Moderate to High energy",
+		"breed": "Cloud Dog",
+		"special_needs": "Regular grooming for the fluffy coat, interactive toys for mental stimulation",
+		"attributes": {
+			"energy_level": 4,
+			"playfulness": 5,
+			"intelligence": 4,
+			"temperament": 5,
+			"trainability": 3
+		},
+		"age": 6
+	},
+	"Maxim": {
+		"description": "Maxim is a mysterious and relaxed Pitbull, known for his calm demeanor and sleepy disposition. His energy level is on the tranquil side, making him an ideal companion for a laid-back lifestyle.",
+		"temperament": "Relaxed, Sleepy",
+		"energy": "Low energy",
+		"breed": "Pitbull",
+		"attributes": {
+			"energy_level": 1,
+			"playfulness": 2,
+			"intelligence": 3,
+			"temperament": 4,
+			"trainability": 5
+		},
+		"age": 9
+	},
+	"Belle": {
+		"description": "Belle is a beautiful brown Pitbull, three years old, and an absolute sweetheart. She enjoys relaxing and sleeping, but don't let that fool you, she has bursts of energy and needs regular exercises to stay happy and healthy.",
+		"temperament": "Relaxed, Sleepy, Friendly",
+		"energy": "Energetic, Needs Exercises",
+		"breed": "Pitbull",
+		"attributes": {
+			"energy_level": 3,
+			"playfulness": 4,
+			"intelligence": 5,
+			"temperament": 5,
+			"trainability": 3
+		},
+		"age": 3
+	},
+	"Sadie": {
+		"description": "Sadie is a spirited and lively Border Collie, known for her incredible intelligence and agility. She loves engaging activities and challenges to keep her sharp mind busy.",
+		"temperament": "Spirited, Lively",
+		"energy": "High energy",
+		"breed": "Border Collie",
+		"attributes": {
+			"energy_level": 5,
+			"playfulness": 5,
+			"intelligence": 5,
+			"temperament": 4,
+			"trainability": 5
+		},
+		"age": 9
+	},
+	"Oscar": {
+		"description": "Oscar is a laid-back and easygoing Basset Hound, recognized for his long ears and droopy eyes. He enjoys leisurely walks and relaxing in cozy spots around the house.",
+		"temperament": "Laid-back, Easygoing",
+		"energy": "Low energy",
+		"breed": "Basset Hound",
+		"attributes": {
+			"energy_level": 1,
+			"playfulness": 2,
+			"intelligence": 3,
+			"temperament": 5,
+			"trainability": 3
+		},
+		"age": 4
+	},
+	"Mia": {
+		"description": "Mia is an affectionate and gentle Shetland Sheepdog, known for her thick double coat and bright, watchful eyes. She forms strong bonds with her family and enjoys spending quality time together.",
+		"temperament": "Affectionate, Gentle",
+		"energy": "Moderate energy",
+		"breed": "Shetland Sheepdog",
+		"attributes": {
+			"energy_level": 3,
+			"playfulness": 4,
+			"intelligence": 5,
+			"temperament": 4,
+			"trainability": 4
+		},
+		"age": 2
+	},
+	"Leo": {
+		"description": "Leo is a majestic and noble Leonberger, admired for his large size and gentle nature. Despite his imposing appearance, Leo is a friendly giant who loves being around people.",
+		"temperament": "Majestic, Noble",
+		"energy": "Moderate energy",
+		"breed": "Leonberger",
+		"attributes": {
+			"energy_level": 2,
+			"playfulness": 3,
+			"intelligence": 4,
+			"temperament": 5,
+			"trainability": 4
+		},
+		"age": 8
+	},
+	"Lola": {
+		"description": "Lola is a spunky and vivacious Dalmatian, recognized for her distinctive black or liver spotted coat. She thrives on activities that allow her to burn off excess energy.",
+		"temperament": "Spunky, Vivacious",
+		"energy": "High energy",
+		"breed": "Dalmatian",
+		"attributes": {
+			"energy_level": 4,
+			"playfulness": 5,
+			"intelligence": 3,
+			"temperament": 4,
+			"trainability": 3
+		},
+		"age": 11
+	},
+	"Simba": {
+		"description": "Simba is a regal and dignified Basenji, known for his elegant posture and tightly curled tail. He is independent yet loyal to his family, with a keen sense of observation.",
+		"temperament": "Regal, Dignified",
+		"energy": "Moderate to High energy",
+		"breed": "Basenji",
+		"attributes": {
+			"energy_level": 3,
+			"playfulness": 4,
+			"intelligence": 4,
+			"temperament": 3,
+			"trainability": 3
+		},
+		"age": 13
+	},
+	"Coco Channel": {
+		"description": "Coco is a charming and affectionate Cavalier King Charles Spaniel, known for her silky coat and expressive eyes. She is a true companion dog, thriving on love and attention.",
+		"temperament": "Charming, Affectionate",
+		"energy": "Moderate energy",
+		"breed": "Cavalier King Charles Spaniel",
+		"attributes": {
+			"energy_level": 2,
+			"playfulness": 3,
+			"intelligence": 4,
+			"temperament": 5,
+			"trainability": 4
+		},
+		"age": 5
+	},
+	"Bentley": {
+		"description": "Bentley is a dignified and noble Great Dane, known for his imposing size and calm demeanor. Despite his giant stature, Bentley is gentle and enjoys lounging around the house.",
+		"temperament": "Dignified, Noble",
+		"energy": "Moderate to Low energy",
+		"breed": "Great Dane",
+		"attributes": {
+			"energy_level": 1,
+			"playfulness": 2,
+			"intelligence": 3,
+			"temperament": 4,
+			"trainability": 5
+		},
+		"age": 10
+	},
+	"Luna-Maria": {
+		"description": "Luna is a free-spirited and adventurous Alaskan Malamute, recognized for her fluffy double coat and striking wolf-like appearance. She thrives in outdoor activities and loves snowy landscapes.",
+		"temperament": "Free-spirited, Adventurous",
+		"energy": "High energy",
+		"breed": "Alaskan Malamute",
+		"attributes": {
+			"energy_level": 5,
+			"playfulness": 5,
+			"intelligence": 4,
+			"temperament": 3,
+			"trainability": 2
+		},
+		"age": 7
+	},
+	"Spider-Milo": {
+		"description": "Milo is a mischievous and energetic Jack Russell Terrier, known for his boundless enthusiasm and love for playful antics. He's always ready for a game of fetch or a speedy run around the yard.",
+		"temperament": "Mischievous, Energetic",
+		"energy": "High energy",
+		"breed": "Jack Russell Terrier",
+		"attributes": {
+			"energy_level": 4,
+			"playfulness": 5,
+			"intelligence": 4,
+			"temperament": 4,
+			"trainability": 3
+		},
+		"age": 2
+	},
+	"Daisy": {
+		"description": "Daisy is a sweet and gentle Labrador Retriever, known for her friendly disposition and love for water. She enjoys swimming and is always eager to please her family with her loyal and affectionate nature.",
+		"temperament": "Sweet, Gentle",
+		"energy": "High energy",
+		"breed": "Labrador Retriever",
+		"attributes": {
+			"energy_level": 5,
+			"playfulness": 4,
+			"intelligence": 3,
+			"temperament": 5,
+			"trainability": 2
+		},
+		"age": 4
+	},
+	"Mochi": {
+		"description": "Mochi is a playful and curious Shiba Inu, known for his fox-like appearance and spirited personality. He enjoys exploring the surroundings and engaging in interactive games with his family.",
+		"temperament": "Playful, Curious",
+		"energy": "Moderate to High energy",
+		"breed": "Shiba Inu",
+		"attributes": {
+			"energy_level": 3,
+			"playfulness": 4,
+			"intelligence": 5,
+			"temperament": 5,
+			"trainability": 3
+		},
+		"age": 11
+	},
+	"Ziggy Stardust": {
+		"description": "Ziggy Stardust is a charismatic and outgoing Corgi, known for his distinctive markings and joyful demeanor. He loves being the center of attention and has a talent for charming everyone he meets.",
+		"temperament": "Charismatic, Outgoing",
+		"energy": "Moderate energy",
+		"breed": "Corgi",
+		"attributes": {
+			"energy_level": 3,
+			"playfulness": 5,
+			"intelligence": 4,
+			"temperament": 5,
+			"trainability": 4
+		},
+		"age": 6
+	},
+	"Rosie": {
+		"description": "Rosie is a gentle and affectionate Boxer, known for her expressive eyes and playful nature. She forms strong bonds with her family and is always up for a game of fetch or a cozy nap on the couch.",
+		"temperament": "Gentle, Affectionate",
+		"energy": "High energy",
+		"breed": "Boxer",
+		"attributes": {
+			"energy_level": 4,
+			"playfulness": 5,
+			"intelligence": 4,
+			"temperament": 5,
+			"trainability": 3
+		},
+		"age": 8
+	},
+	"Lily": {
+		"description": "Lily is a gentle and affectionate Cocker Spaniel, known for her silky ears and sweet disposition. She loves cuddling and enjoys short walks in the park.",
+		"temperament": "Gentle, Affectionate",
+		"energy": "Low to Moderate energy",
+		"breed": "Cocker Spaniel",
+		"attributes": {
+			"energy_level": 2,
+			"playfulness": 3,
+			"intelligence": 4,
+			"temperament": 5,
+			"trainability": 4
+		},
+		"age": 5
+	},
+	"Cooper": {
+		"description": "Cooper is an energetic and friendly Australian Shepherd, recognized for his striking blue merle coat and intelligence. He thrives on mental and physical stimulation.",
+		"temperament": "Energetic, Friendly",
+		"energy": "High energy",
+		"breed": "Australian Shepherd",
+		"attributes": {
+			"energy_level": 4,
+			"playfulness": 5,
+			"intelligence": 5,
+			"temperament": 4,
+			"trainability": 5
+		},
+		"age": 3
+	},
+	"Misty": {
+		"description": "Misty is a playful and curious Border Terrier, known for her wiry coat and lively personality. She enjoys digging and participating in agility activities.",
+		"temperament": "Playful, Curious",
+		"energy": "Moderate to High energy",
+		"breed": "Border Terrier",
+		"attributes": {
+			"energy_level": 3,
+			"playfulness": 5,
+			"intelligence": 4,
+			"temperament": 4,
+			"trainability": 3
+		},
+		"age": 2
+	},
+	"Rocky II": {
+		"description": "Rocky II is an athletic and loyal Rottweiler, known for his strong build and protective nature. He forms deep bonds with his family and excels in obedience training.",
+		"temperament": "Athletic, Loyal",
+		"energy": "High energy",
+		"breed": "Rottweiler",
+		"attributes": {
+			"energy_level": 4,
+			"playfulness": 4,
+			"intelligence": 5,
+			"temperament": 4,
+			"trainability": 4
+		},
+		"age": 6
+	}
 }
