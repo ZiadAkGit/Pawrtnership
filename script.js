@@ -168,7 +168,7 @@ function addDog() {
 					alert(
 						"Dog has been added\nGo to the Dashboard screen to see your paw friend 🐾"
 					);
-					window.location.href = ("dashboard.html");
+					window.location.href = "dashboard.html";
 				} else alert(responseData);
 			});
 	} else {
