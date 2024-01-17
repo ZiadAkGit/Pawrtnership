@@ -87,6 +87,15 @@ input[type="radio"] {
 	cursor: pointer;
 }
 
+#reset-btn {
+	margin-top: 20px;
+	padding: 10px;
+	background-color: #4caf50;
+	color: #fff;
+	border: none;
+	cursor: pointer;
+}
+
 input {
 	width: 100%;
 	padding: 10px;

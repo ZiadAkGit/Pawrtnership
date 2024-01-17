@@ -82,7 +82,7 @@ function getData() {
         dogListContainer.innerHTML = "";
         const result_dog = JSON.parse(dogs_chosen);
         for (let dog in result_dog) {
-            final_dog = result_dog[dog];
+            const final_dog = result_dog[dog];
             dog_name = final_dog[0];
             dog_breed = final_dog[1]["breed"];
             const listItem = document.createElement("li");

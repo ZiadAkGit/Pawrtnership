@@ -32,7 +32,8 @@ function submitQuiz() {
             }
             localStorage.setItem('submited', "Quiz Submited");
             localStorage["dogs_chosen"] = JSON.stringify(dogs_result);
-            alert("Quiz Submited :)\nGo to the Dashboard page to see your result 🐾");
+            alert("Quiz Submited :)\nGoing to the Dashboard page to see your result 🐾");
+            window.location.href.replace("dashboard.html");
         })
         .catch((error) => {
             localStorage.setItem('submited', false);
