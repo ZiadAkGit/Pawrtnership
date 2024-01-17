@@ -1,5 +1,3 @@
-import random
-
 from flask import Flask, request
 from flask_cors import CORS
 from collections import Counter
@@ -69,7 +67,7 @@ def quiz_submission():
     if len(best_dogs) > 0:
         backend.choices = max_best
         print(f'Best Option: {max_best}')
-    elif len(second_option) >= 5:
+    elif len(second_option) >= 2:
         backend.choices = max_second
         print(f'Second Option: {max_second}')
     else:
@@ -135,7 +133,6 @@ def user_check():
 def get_users():
     username = request.get_data(as_text=True).split(',')[0]
     password = request.get_data(as_text=True).split(',')[1]
-    # print(f'User: {username} tried to login using {password}')
     # TODO add database with sql so the table can be updated
     if username in backend.users.values():
         if username == backend.users.get(password):
