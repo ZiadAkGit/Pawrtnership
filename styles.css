@@ -88,7 +88,7 @@ input {
 
 textarea {
 	height: fit-content;
-	width: 90dvw;
+	width: 90%;
 	display: block;
 	border: 1px solid #ccc;
 	border-radius: 14px;
@@ -98,7 +98,6 @@ textarea {
 
 button {
 	margin: 0 auto;
-	margin-left: 50px;
 	display: inline;
 	background-color: #4caf50;
 	color: #fff;
@@ -161,7 +160,6 @@ ul {
 	border-radius: 14px;
 	box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 	margin: 0 auto;
-	width: fit-content;
 }
 
 .add-dog-container form {
@@ -193,7 +191,7 @@ ul {
 	}
 
 	body {
-		max-width: fit-content;
+		max-width: 90svw;
 		margin: 0 auto;
 		height: 100svh;
 		overflow: auto;
