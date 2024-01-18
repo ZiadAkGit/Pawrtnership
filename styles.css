@@ -77,16 +77,6 @@ input[type="radio"] {
 	margin-right: 5px;
 }
 
-#submit-btn,
-#reset-btn {
-	margin-top: 20px;
-	padding: 10px;
-	background-color: #4caf50;
-	color: #fff;
-	border: none;
-	cursor: pointer;
-}
-
 input {
 	width: 100%;
 	padding: 10px;
@@ -107,13 +97,20 @@ textarea {
 }
 
 button {
-	display: inline-block;
-	padding: 10px 20px;
+	margin: 0 auto;
+	margin-left: 50px;
+	display: inline;
 	background-color: #4caf50;
 	color: #fff;
 	border: none;
 	border-radius: 5px;
 	cursor: pointer;
+	font-weight: bold;
+	padding: 10px;
+}
+
+#reset-btn {
+	background-color: red;
 }
 
 button:hover {
@@ -234,17 +231,6 @@ ul {
 	.dog_breed,
 	.login-container {
 		max-width: 100%;
-	}
-
-	#reset-btn,
-	#submit-btn {
-		margin: 0 auto;
-		margin-left: 15dvw;
-		font-weight: bold;
-	}
-
-	#reset-btn {
-		background-color: red;
 	}
 }
 
