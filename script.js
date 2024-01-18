@@ -55,6 +55,16 @@ function showChosenDogs(dogs) {
 	return result;
 }
 
+
+if (window.location.href.includes("index.html")) {
+	document.getElementById("password").addEventListener("keypress", function (event) {
+		if (event.key === "Enter") {
+			event.preventDefault();
+			login();
+		}
+	});
+}
+
 function getData() {
 	if (quiz_submit != "Quiz Submited") {
 		const dogListContainer = document.getElementById("dogList");
@@ -99,11 +109,15 @@ function getData() {
 async function login() {
 	const usernameInput = document.getElementById("username").value;
 	const passwordInput = document.getElementById("password").value;
+	const spinner = document.getElementsByClassName("ldio-8kldcctdadd")[0];
 	if (usernameInput && passwordInput) {
+		spinner.style.display = "block";
 		const values = await get_users(usernameInput, passwordInput);
 		if (values == "OK") {
+			spinner.style.display = "none";
 			window.location.href = "dashboard.html";
 		} else {
+			spinner.style.display = "none";
 			alert(`Error: ${values}`);
 		}
 	} else {

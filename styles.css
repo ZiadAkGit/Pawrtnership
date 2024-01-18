@@ -87,6 +87,9 @@ input[type="radio"] {
 	cursor: pointer;
 }
 
+
+
+
 #reset-btn {
 	margin-top: 20px;
 	padding: 10px;
@@ -180,4 +183,56 @@ ul {
 
 .login-container form {
 	padding-top: 20px;
+}
+
+@keyframes ldio-8kldcctdadd {
+	0% {
+		transform: rotate(0deg)
+	}
+
+	50% {
+		transform: rotate(180deg)
+	}
+
+	100% {
+		transform: rotate(360deg)
+	}
+}
+
+.ldio-8kldcctdadd div {
+	margin: 0 auto;
+	position: absolute;
+	animation: ldio-8kldcctdadd 0.9s linear infinite;
+	width: 160px;
+	height: 160px;
+	top: 20px;
+	left: 20px;
+	border-radius: 50%;
+	box-shadow: 0 4px 0 0 #5fb537;
+	transform-origin: 80px 82px;
+}
+
+.loadingio-spinner-eclipse-qgc0pbfffg {
+	margin: 0 auto;
+	width: 200px;
+	height: 200px;
+	display: inline-block;
+	overflow: hidden;
+	background: #f1f2f3;
+}
+
+.ldio-8kldcctdadd {
+	display: none;
+	margin: 0 auto;
+	width: 100%;
+	height: 100%;
+	position: relative;
+	transform: translateZ(0) scale(1);
+	backface-visibility: hidden;
+	transform-origin: 0 0;
+}
+
+.ldio-8kldcctdadd div {
+	margin: 0 auto;
+	box-sizing: content-box;
 }
