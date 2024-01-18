@@ -1,107 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link
+			rel="apple-touch-icon"
+			sizes="180x180"
+			href="favicon/apple-touch-icon.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="32x32"
+			href="favicon/favicon-32x32.png"
+		/>
+		<link
+			rel="icon"
+			type="image/png"
+			sizes="16x16"
+			href="favicon/favicon-16x16.png"
+		/>
+		<link rel="manifest" href="favicon/site.webmanifest" />
+		<link
+			rel="mask-icon"
+			href="favicon/safari-pinned-tab.svg"
+			color="#5bbad5"
+		/>
+		<meta name="msapplication-TileColor" content="#da532c" />
+		<meta name="theme-color" content="#ffffff" />
+		<title>Dog Match Quiz</title>
+		<link rel="stylesheet" href="styles.css" />
+	</head>
 
-<head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png">
-	<link rel="icon" type="image/png" sizes="32x32" href="favicon/favicon-32x32.png">
-	<link rel="icon" type="image/png" sizes="16x16" href="favicon/favicon-16x16.png">
-	<link rel="manifest" href="favicon/site.webmanifest">
-	<link rel="mask-icon" href="favicon/safari-pinned-tab.svg" color="#5bbad5">
-	<meta name="msapplication-TileColor" content="#da532c">
-	<meta name="theme-color" content="#ffffff">
-	<title>Dog Match Quiz</title>
-	<link rel="stylesheet" href="styles.css" />
-</head>
-
-<body id="quiz_body">
-	<header>
-		<a href="dashboard.html" id="dashboardLink">Dashboard</a>
-		<a href="quiz.html" id="quizLink">Quiz</a>
-		<a href="dogs.html" id="dogsLink">Add a Dog</a>
-	</header>
-	<div id="quiz-container">
-		<!-- Energy Level Question -->
-		<div class="question" data-category="Energy Level">
-			<h4>
-				On a scale from 1 to 5, how would you describe your ideal dog's energy
-				level?
-			</h4>
-			<div class="options">
-				<label><input type="radio" name="energy_level" value="1" /> 1</label>
-				<label><input type="radio" name="energy_level" value="2" /> 2</label>
-				<label><input type="radio" name="energy_level" value="3" /> 3</label>
-				<label><input type="radio" name="energy_level" value="4" /> 4</label>
-				<label><input type="radio" name="energy_level" value="5" /> 5</label>
+	<body id="quiz_body">
+		<header>
+			<a href="dashboard.html" id="dashboardLink">Dashboard</a>
+			<a href="quiz.html" id="quizLink">Quiz</a>
+			<a href="dogs.html" id="dogsLink">Add a Dog</a>
+		</header>
+		<div id="quiz-container">
+			<!-- Energy Level Question -->
+			<div class="question" data-category="Energy Level">
+				<h4>
+					On a scale from 1 to 5, how would you describe your ideal dog's energy
+					level?
+				</h4>
+				<div class="options">
+					<label><input type="radio" name="energy_level" value="1" /> 1</label>
+					<label><input type="radio" name="energy_level" value="2" /> 2</label>
+					<label><input type="radio" name="energy_level" value="3" /> 3</label>
+					<label><input type="radio" name="energy_level" value="4" /> 4</label>
+					<label><input type="radio" name="energy_level" value="5" /> 5</label>
+				</div>
 			</div>
-		</div>
 
-		<!-- Playfulness Question -->
-		<div class="question" data-category="Playfulness">
-			<h4>
-				How playful would you like your dog to be?<br />(1 = Not playful, 5 =
-				Very playful)
-			</h4>
-			<div class="options">
-				<label><input type="radio" name="playfulness" value="1" /> 1</label>
-				<label><input type="radio" name="playfulness" value="2" /> 2</label>
-				<label><input type="radio" name="playfulness" value="3" /> 3</label>
-				<label><input type="radio" name="playfulness" value="4" /> 4</label>
-				<label><input type="radio" name="playfulness" value="5" /> 5</label>
+			<!-- Playfulness Question -->
+			<div class="question" data-category="Playfulness">
+				<h4>
+					How playful would you like your dog to be?<br />(1 = Not playful, 5 =
+					Very playful)
+				</h4>
+				<div class="options">
+					<label><input type="radio" name="playfulness" value="1" /> 1</label>
+					<label><input type="radio" name="playfulness" value="2" /> 2</label>
+					<label><input type="radio" name="playfulness" value="3" /> 3</label>
+					<label><input type="radio" name="playfulness" value="4" /> 4</label>
+					<label><input type="radio" name="playfulness" value="5" /> 5</label>
+				</div>
 			</div>
-		</div>
 
-		<!-- Intelligence Question -->
-		<div class="question" data-category="Intelligence">
-			<h4>
-				How important is intelligence in your ideal dog?<br />(1 = Not
-				important, 5 = Very important)
-			</h4>
-			<div class="options">
-				<label><input type="radio" name="intelligence" value="1" /> 1</label>
-				<label><input type="radio" name="intelligence" value="2" /> 2</label>
-				<label><input type="radio" name="intelligence" value="3" /> 3</label>
-				<label><input type="radio" name="intelligence" value="4" /> 4</label>
-				<label><input type="radio" name="intelligence" value="5" /> 5</label>
+			<!-- Intelligence Question -->
+			<div class="question" data-category="Intelligence">
+				<h4>
+					How important is intelligence in your ideal dog?<br />(1 = Not
+					important, 5 = Very important)
+				</h4>
+				<div class="options">
+					<label><input type="radio" name="intelligence" value="1" /> 1</label>
+					<label><input type="radio" name="intelligence" value="2" /> 2</label>
+					<label><input type="radio" name="intelligence" value="3" /> 3</label>
+					<label><input type="radio" name="intelligence" value="4" /> 4</label>
+					<label><input type="radio" name="intelligence" value="5" /> 5</label>
+				</div>
 			</div>
-		</div>
 
-		<!-- Temperament Question -->
-		<div class="question" data-category="Temperament">
-			<h4>
-				Describe your ideal dog's temperament.<br />(1 = Calm, 5 = Energetic)
-			</h4>
-			<div class="options">
-				<label><input type="radio" name="temperament" value="1" /> 1</label>
-				<label><input type="radio" name="temperament" value="2" /> 2</label>
-				<label><input type="radio" name="temperament" value="3" /> 3</label>
-				<label><input type="radio" name="temperament" value="4" /> 4</label>
-				<label><input type="radio" name="temperament" value="5" /> 5</label>
+			<!-- Temperament Question -->
+			<div class="question" data-category="Temperament">
+				<h4>
+					Describe your ideal dog's temperament.<br />(1 = Calm, 5 = Energetic)
+				</h4>
+				<div class="options">
+					<label><input type="radio" name="temperament" value="1" /> 1</label>
+					<label><input type="radio" name="temperament" value="2" /> 2</label>
+					<label><input type="radio" name="temperament" value="3" /> 3</label>
+					<label><input type="radio" name="temperament" value="4" /> 4</label>
+					<label><input type="radio" name="temperament" value="5" /> 5</label>
+				</div>
 			</div>
-		</div>
 
-		<!-- Trainability Question -->
-		<div class="question" data-category="Trainability">
-			<h4>
-				How trainable would you like your dog to be?<br />(1 = Not trainable,
-				5 = Very trainable)
-			</h4>
-			<div class="options">
-				<label><input type="radio" name="trainability" value="1" /> 1</label>
-				<label><input type="radio" name="trainability" value="2" /> 2</label>
-				<label><input type="radio" name="trainability" value="3" /> 3</label>
-				<label><input type="radio" name="trainability" value="4" /> 4</label>
-				<label><input type="radio" name="trainability" value="5" /> 5</label>
+			<!-- Trainability Question -->
+			<div class="question" data-category="Trainability">
+				<h4>
+					How trainable would you like your dog to be?<br />(1 = Not trainable,
+					5 = Very trainable)
+				</h4>
+				<div class="options">
+					<label><input type="radio" name="trainability" value="1" /> 1</label>
+					<label><input type="radio" name="trainability" value="2" /> 2</label>
+					<label><input type="radio" name="trainability" value="3" /> 3</label>
+					<label><input type="radio" name="trainability" value="4" /> 4</label>
+					<label><input type="radio" name="trainability" value="5" /> 5</label>
+				</div>
 			</div>
+			<center>
+				<button id="reset-btn" onclick="resetQuiz()">Reset</button>
+				<button id="submit-btn" onclick="submitQuiz()">Submit</button>
+			</center>
 		</div>
-		<center>
-			<button id="reset-btn" onclick="resetQuiz()">Reset</button>
-			<button id="submit-btn" onclick="submitQuiz()">Submit</button>
-		</center>
-	</div>
-	<script src="script.js"></script>
-	<script src="submit_quiz.js"></script>
-</body>
-
+		<script src="script.js"></script>
+		<script src="submit_quiz.js"></script>
+	</body>
 </html>

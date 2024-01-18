@@ -55,14 +55,15 @@ function showChosenDogs(dogs) {
 	return result;
 }
 
-
 if (window.location.href.includes("index.html")) {
-	document.getElementById("password").addEventListener("keypress", function (event) {
-		if (event.key === "Enter") {
-			event.preventDefault();
-			login();
-		}
-	});
+	document
+		.getElementById("password")
+		.addEventListener("keypress", function (event) {
+			if (event.key === "Enter") {
+				event.preventDefault();
+				login();
+			}
+		});
 }
 
 function getData() {
@@ -152,7 +153,7 @@ function addDog() {
 	const dogDescriptionInput = document.getElementById("dogDescription").value;
 	const dogTemperamentInput = document.getElementById("dogTemperament").value;
 	const dogAge = document.getElementById("dogage").value;
-	if (dogNameInput && dogBreedInput) {
+	if (dogNameInput && dogBreedInput && dogDescriptionInput) {
 		const dogListContainer = document.getElementById("dogList");
 		const listItem = document.createElement("li");
 		const dog = [
@@ -186,7 +187,9 @@ function addDog() {
 				} else alert(responseData);
 			});
 	} else {
-		alert("Please enter both dog name and breed.");
+		alert(
+			"The following fields are required:\nDog Name, Dog Breed and Description🐾"
+		);
 	}
 }
 
