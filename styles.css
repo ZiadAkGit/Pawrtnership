@@ -2,7 +2,7 @@ body {
 	font-family: "Arial", sans-serif;
 	margin: 0 auto;
 	background-color: #f0f0f0;
-	max-width: 40dvw;
+	max-width: 40vw;
 }
 
 b {
@@ -13,9 +13,8 @@ b {
 header {
 	background-color: #f0f0f0;
 	text-align: center;
-	max-width: 20dvw;
 	margin: 0 auto;
-	padding-bottom: 3cqb;
+	padding-bottom: 3%;
 }
 
 header a {
@@ -34,7 +33,7 @@ header a.active {
 }
 
 .container {
-	max-width: 600px;
+	max-width: 80vw;
 	margin: 20px auto;
 	padding: 20px;
 	border-radius: 10px;
@@ -61,7 +60,7 @@ label {
 }
 
 #quiz-container {
-	max-width: 600px;
+	max-width: 80vw;
 	margin: auto;
 }
 
@@ -78,18 +77,7 @@ input[type="radio"] {
 	margin-right: 5px;
 }
 
-#submit-btn {
-	margin-top: 20px;
-	padding: 10px;
-	background-color: #4caf50;
-	color: #fff;
-	border: none;
-	cursor: pointer;
-}
-
-
-
-
+#submit-btn,
 #reset-btn {
 	margin-top: 20px;
 	padding: 10px;
@@ -110,7 +98,7 @@ input {
 
 textarea {
 	height: fit-content;
-	width: fit-content;
+	width: 90dvw;
 	display: block;
 	border: 1px solid #ccc;
 	border-radius: 14px;
@@ -136,6 +124,14 @@ ul {
 	list-style: none;
 	padding: 0;
 	margin-top: 20px;
+}
+
+#dogDetailsContainer {
+	padding-left: 10px;
+	padding-right: 10px;
+	padding-top: 0px;
+	margin: 0 auto;
+	position: sticky;
 }
 
 .dog_breed {
@@ -178,11 +174,78 @@ ul {
 .login-container {
 	margin: 0 auto;
 	text-align: center;
-	width: 15dvw;
+	width: 40vw;
 }
 
 .login-container form {
 	padding-top: 20px;
+}
+
+/* Media Queries */
+@media screen and (max-width: 768px) {
+	header {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: row;
+		max-width: fit-content;
+	}
+
+	header a {
+		margin: 0 auto;
+	}
+
+	body {
+		max-width: fit-content;
+		margin: 0 auto;
+		height: 100svh;
+		overflow: auto;
+	}
+
+	.quiz-container {
+		display: block;
+		padding-left: 10px;
+		padding-right: 10px;
+		height: 100svh;
+		overflow-y: auto;
+		scroll-behavior: smooth;
+	}
+
+	.dog-list-container {
+		display: block;
+		padding-left: 10px;
+		padding-right: 10px;
+		height: 60svh;
+		overflow-y: auto;
+		scroll-behavior: smooth;
+	}
+
+	.add-dog-container {
+		padding: 15px;
+		box-shadow: none;
+	}
+
+	.loginForm form {
+		margin: 0 auto;
+		padding-top: 200px;
+	}
+
+	.container,
+	.dog_breed,
+	.login-container {
+		max-width: 100%;
+	}
+
+	#reset-btn,
+	#submit-btn {
+		margin: 0 auto;
+		margin-left: 15dvw;
+		font-weight: bold;
+	}
+
+	#reset-btn {
+		background-color: red;
+	}
 }
 
 @keyframes ldio-8kldcctdadd {
