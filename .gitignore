@@ -3,7 +3,7 @@
 # Ignore the following files
 ignore.py
 dogs_database.db
+users.db
 # Ignore the .idea directory
 .idea/
 __pycache__/
-users.db

@@ -12,6 +12,17 @@ if (currentPage.includes("dashboard.html")) {
 
 let dogs_chosen = localStorage.getItem("dogs_chosen");
 let quiz_submit = localStorage.getItem("submited");
+let username_logged = localStorage.getItem("username_logged");
+
+
+if (username_logged != "admin") {
+	const header = document.getElementsByTagName("header")[0];
+	const add_a_dog = document.getElementById("dogsLink");
+	header.removeChild(add_a_dog);
+	console.log(`Hey ${username_logged}, Don't even try!`);
+}
+
+
 async function get_users(username, password) {
 	try {
 		const response = await fetch(
@@ -89,12 +100,8 @@ function getData() {
 			.then((response) => response.json())
 			.then((data) => {
 				const username = data["username"];
+				localStorage.setItem("username_logged", username);
 				const dogs = data["dogs"];
-				if (username != "admin") {
-					// Add permission for admin only to add new dogs,
-					// then add admins account into the sql database.
-					console.log(`Hey ${username}, Don't even try!`);
-				}
 				for (const dog in dogs) {
 					const sent_dog = {
 						dog_name: dogs[dog][0],
