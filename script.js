@@ -90,7 +90,9 @@ function getData() {
 			.then((data) => {
 				const username = data["username"];
 				const dogs = data["dogs"];
-				console.log(`Hey ${username}, Don't even try!`);
+				if (username != "admin") {
+					console.log(`Hey ${username}, Don't even try!`);
+				}
 				Object.entries(dogs).forEach((dog) => {
 					dog_name = dog["name"];
 					dog_breed = dog["breed"];
