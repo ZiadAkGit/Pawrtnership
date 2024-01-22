@@ -5,30 +5,23 @@ from collections import Counter
 import openai as openai
 import ignore as backend
 import json
+import sqlite3
+
 
 app = Flask(__name__)
 CORS(app)
 openai.api_key = backend.openai_key
+dogs_database = sqlite3.connect('dogs_database.db', check_same_thread=False)
+users_database = sqlite3.connect('users.db', check_same_thread=False)
+dogs_cursor = dogs_database.cursor()
+users_cursor = users_database.cursor()
 
 
-def dogs_data():
-    # TODO add database with sql so the table can be updated
-    file = open('example_dogs.json')
-    data = json.load(file)
-    for row in data:
-        dog_name = row
-        dog_description = data[row]['description']
-        dog_temperament = data[row]['temperament']
-        dog_breed = data[row]['breed']
-        dog_age = data[row]['age']
-        dog_attributes = data[row]['attributes']
-        backend.dogs[dog_name] = {"description": dog_description, "temperament": dog_temperament,
-                                  "breed": dog_breed, "age": dog_age, "attributes": dog_attributes}
-    file.close()
-    username = str(backend.logged_users.get(request.remote_addr)).split(',')[0]
+def dogs_data(ip):
+    username = users_cursor.execute(f'''select username from logged_users where ip = "{ip}"''').fetchall()
     data = {
         "username": username,
-        "dogs": backend.dogs
+        "dogs": dogs_cursor.execute('''SELECT * FROM dogs''').fetchall()
     }
     return data
 
@@ -38,9 +31,9 @@ def dogs_data():
 
 @app.route('/api/data', methods=['GET'])
 def get_data():
-    # address = str(request.remote_addr)
+    address = str(request.remote_addr)
     # headers = str(request.headers)
-    return dogs_data()
+    return dogs_data(address)
 
 
 @app.route('/api/submit_quiz', methods=['POST'])
@@ -49,12 +42,22 @@ def quiz_submission():
     score_100 = []
     score_75 = []
     score_50 = []
-    for i in backend.dogs:
-        if backend.dogs.get(i)['attributes'] == client_attributes:
+    dogs = dogs_cursor.execute('''
+        SELECT * FROM dogs
+    ''').fetchall()
+    for i in dogs:
+        energy_level = dogs_cursor.execute(f'''SELECT energy_level FROM dogs where name="{i[0]}"''').fetchall()[0][0]
+        playfulness = dogs_cursor.execute(f'''SELECT playfulness FROM dogs where name="{i[0]}"''').fetchall()[0][0]
+        intelligence = dogs_cursor.execute(f'''SELECT intelligence FROM dogs where name="{i[0]}"''').fetchall()[0][0]
+        trainability = dogs_cursor.execute(f'''SELECT trainability FROM dogs where name="{i[0]}"''').fetchall()[0][0]
+        temperament = dogs_cursor.execute(f'''SELECT temperament_attribute FROM dogs where name="{i[0]}"''').fetchall()[0][0]
+        dog_attributes = {'energy_level': energy_level, 'playfulness': playfulness,
+                          'intelligence': intelligence, 'temperament': temperament, 'trainability': trainability}
+        if dog_attributes == client_attributes:
             score_100.append(i)
         else:
-            for j in backend.dogs.get(i)['attributes']:
-                if backend.dogs.get(i)["attributes"][j] == client_attributes[j]:
+            for j in dog_attributes:
+                if dog_attributes[j] == client_attributes[j]:
                     score_75.append(i)
                 else:
                     score_50.append(i)
@@ -64,18 +67,18 @@ def quiz_submission():
     max_best = [dog for dog, count in best_dogs.items() if count == max(best_dogs.values())]
     max_second = [dog for dog, count in second_option.items() if count == max(second_option.values())]
     max_last = [dog for dog, count in last_option.items() if count == max(last_option.values())]
+    best_choice = []
     if len(best_dogs) > 0:
-        backend.choices = max_best
-        print(f'Best Option: {max_best}')
+        best_choice = max_best
     elif len(second_option) >= 2:
-        backend.choices = max_second
-        print(f'Second Option: {max_second}')
+        best_choice = max_second
     else:
-        backend.choices = max_last
-        print(f'Last Option: {max_last}')
+        best_choice = max_last
     chosen_dogs = {}
-    for dog in backend.choices:
-        chosen_dogs[dog] = backend.dogs.get(dog)
+    print(best_choice)
+    for dog in best_choice:
+        chosen_dogs[dog[0]] = list(dogs_cursor.execute(f'''SELECT * FROM dogs where name = "{dog[0]}"''').fetchone())
+        print(chosen_dogs[dog[0]])
     return json.dumps(chosen_dogs)
 
 
@@ -121,8 +124,11 @@ def write_json(dog_name, dog_data):
 @app.route('/api/usercheck', methods=['GET'])
 def user_check():
     ip = request.remote_addr
-    user = str(backend.logged_users.get(ip)).split(',')[0]
-    if user in backend.users.values():
+    user = users_cursor.execute(f'''
+        SELECT username from logged_users
+        where ip = "{ip}"
+    ''').fetchall()[0][0]
+    if user:
         print("Everything is good!")
         return "OK"
     else:
@@ -133,13 +139,23 @@ def user_check():
 def get_users():
     username = request.get_data(as_text=True).split(',')[0]
     password = request.get_data(as_text=True).split(',')[1]
-    # TODO add database with sql so the table can be updated
-    if username in backend.users.values():
-        if username == backend.users.get(password):
-            backend.logged_users[request.remote_addr] = f'{username},{password}'
-            return "OK"
-        else:
-            return "Password incorrect"
+    ip = request.remote_addr
+    users = users_cursor.execute('''SELECT username FROM users 
+                                 WHERE username IS NOT NULL''').fetchall()
+    for user in users:
+        if username == str(user[0]).strip():
+            chosen_password = users_cursor.execute(f'''SELECT password from users 
+            where username="{username}"''').fetchall()[0][0]
+            if password == chosen_password:
+                print(f'{username} has been logged in from {ip}')
+                users_cursor.execute(f'''
+                    INSERT INTO logged_users(ip, username, password)
+                    VALUES ("{ip}", "{username}", "{password}") 
+                ''')
+                users_database.commit()
+                return "OK"
+            else:
+                return "Password incorrect"
     else:
         return "Please Register"
 

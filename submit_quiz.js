@@ -19,26 +19,36 @@ function submitQuiz() {
 			},
 			body: JSON.stringify(user_choices),
 		})
-			.then((response) => response.json())
+			.then((response) => {
+				return response.json()
+			})
 			.then((dogs) => {
 				for (let dog in dogs) {
+					dog_attribute = {
+						"energy_level": dogs[dog][5],
+						"playfulness": dogs[dog][6],
+						"intelligence": dogs[dog][7],
+						"trainability": dogs[dog][8],
+						"temperament": dogs[dog][10],
+					}
 					const chosen_dog = [
-						dog,
 						{
-							description: dogs[dog]["description"],
-							temperament: dogs[dog]["temperament"],
-							breed: dogs[dog]["breed"],
-							age: dogs[dog]["age"],
-							attributes: dogs[dog]["attributes"],
+							dog_name: dog,
+							description: dogs[dog][1],
+							temperament: dogs[dog][2],
+							breed: dogs[dog][4],
+							age: dogs[dog][9],
+							attributes: dog_attribute,
 						},
 					];
 					dogs_result.push(chosen_dog);
 				}
-				localStorage.setItem("submited", "Quiz Submited");
-				localStorage["dogs_chosen"] = JSON.stringify(dogs_result);
 				alert(
 					"Quiz Submited :)\nGoing to the dashboard page to see your result 🐾"
 				);
+				const dogs_sent = JSON.stringify(dogs_result);
+				localStorage.setItem("submited", "Quiz Submited");
+				localStorage["dogs_chosen"] = dogs_sent;
 				window.location.href = "dashboard.html";
 			})
 			.catch((error) => {

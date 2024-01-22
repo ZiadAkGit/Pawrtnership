@@ -12,7 +12,6 @@ if (currentPage.includes("dashboard.html")) {
 
 let dogs_chosen = localStorage.getItem("dogs_chosen");
 let quiz_submit = localStorage.getItem("submited");
-
 async function get_users(username, password) {
 	try {
 		const response = await fetch(
@@ -95,9 +94,9 @@ function getData() {
 		dogListContainer.innerHTML = "";
 		const result_dog = JSON.parse(dogs_chosen);
 		for (let dog in result_dog) {
-			const final_dog = result_dog[dog];
-			dog_name = final_dog[0];
-			dog_breed = final_dog[1]["breed"];
+			const final_dog = result_dog[dog][0];
+			dog_name = final_dog["dog_name"];
+			dog_breed = final_dog["breed"];
 			const listItem = document.createElement("li");
 			listItem.className = "dog_breed";
 			listItem.textContent = `${dog_name} the ${dog_breed}`;
@@ -128,12 +127,12 @@ async function login() {
 
 function showDogDetails(dog) {
 	const dogDetailsContainer = document.getElementById("dogDetailsContainer");
-	dog_name = dog[0];
-	dog_breed = dog[1]["breed"];
-	dog_description = dog[1]["description"];
-	dog_temperament = dog[1]["temperament"];
-	dog_age = dog[1]["age"];
-	dog_attributes = dog[1]["attributes"];
+	dog_name = dog["dog_name"];
+	dog_breed = dog["breed"];
+	dog_description = dog["description"];
+	dog_temperament = dog["temperament"];
+	dog_age = dog["age"];
+	dog_attributes = dog["attributes"];
 	if (dog) {
 		window.scrollTo({
 			top: 0,
@@ -213,7 +212,7 @@ if (window.location.href.includes("dashboard.html")) {
 			if (data) {
 				getData();
 			} else {
-				// window.location.replace("index.html");
+				window.location.replace("index.html");
 				console.log(`Data is: ${data}`);
 			}
 		})
