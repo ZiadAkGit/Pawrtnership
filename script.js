@@ -95,15 +95,20 @@ function getData() {
 					// then add admins account into the sql database.
 					console.log(`Hey ${username}, Don't even try!`);
 				}
-				Object.entries(dogs).forEach((dog) => {
-					dog_name = dog["name"];
-					dog_breed = dog["breed"];
+				for (const dog in dogs) {
+					const sent_dog = {
+						dog_name: dogs[dog][0],
+						breed: dogs[dog][4],
+						description: dogs[dog][1],
+						temperament: `${dogs[dog][2]}, ${dogs[dog][3]}`,
+						age: dogs[dog][9]
+					};
 					const listItem = document.createElement("li");
 					listItem.className = "dog_breed";
-					listItem.textContent = `${dog_name} the ${dog_breed}`;
-					listItem.onclick = () => showDogDetails(dog);
+					listItem.textContent = `${sent_dog["dog_name"]} the ${sent_dog["breed"]}`;
+					listItem.onclick = () => showDogDetails(sent_dog);
 					dogListContainer.appendChild(listItem);
-				});
+				}
 			})
 			.catch((error) => {
 				console.error("Error:", error);
@@ -152,7 +157,6 @@ function showDogDetails(dog) {
 	dog_description = dog["description"];
 	dog_temperament = dog["temperament"];
 	dog_age = dog["age"];
-	dog_attributes = dog["attributes"];
 	if (dog) {
 		window.scrollTo({
 			top: 0,
