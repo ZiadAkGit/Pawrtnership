@@ -26,9 +26,6 @@ def dogs_data(ip):
     return data
 
 
-# TODO add database with sql so the table can be updated
-
-
 @app.route('/api/data', methods=['GET'])
 def get_data():
     address = str(request.remote_addr)
