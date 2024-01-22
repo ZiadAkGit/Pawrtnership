@@ -155,15 +155,14 @@ function addDog() {
 	if (dogNameInput && dogBreedInput && dogDescriptionInput) {
 		const dogListContainer = document.getElementById("dogList");
 		const listItem = document.createElement("li");
-		const dog = [
-			dogNameInput,
-			{
-				description: dogDescriptionInput,
-				temperament: dogTemperamentInput,
-				breed: dogBreedInput,
-				age: dogAge,
-			},
-		];
+		const dog =
+		{
+			dog_name: dogNameInput,
+			description: dogDescriptionInput,
+			temperament: dogTemperamentInput,
+			breed: dogBreedInput,
+			age: dogAge,
+		};
 		listItem.className = "dog_breed";
 		listItem.textContent = `${dogNameInput} the ${dogBreedInput}`;
 		listItem.onclick = () => showDogDetails(dog);

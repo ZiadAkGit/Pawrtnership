@@ -85,40 +85,54 @@ def quiz_submission():
 @app.route('/api/add_dog', methods=['POST'])
 def add_dog():
     dog = json.loads(request.get_data())
-    dog_name = dog[0]
-    dog_description = dog[1]['description']
-    dog_temperament = dog[1]['temperament']
-    dog_breed = dog[1]['breed']
-    dog_age = dog[1]['age']
-    # TODO add database with sql so the table can be updated
-    if not backend.dogs.get(dog_name):
-        attributes = openai.chat.completions.create(
+    dog_name = dog["dog_name"]
+    dog_description = dog['description']
+    dog_temperament = dog['temperament']
+    dog_breed = dog['breed']
+    dog_age = dog['age']
+    dog_name_check = dogs_cursor.execute(f'''
+    SELECT * FROM dogs where name="{dog_name}"
+''').fetchone()
+    if not dog_name_check:
+        gpt_attributes = openai.chat.completions.create(
             model="gpt-4-1106-preview",
             messages=[
                 {"role": "system", "content": backend.system},
                 {"role": "user", "content": f'Description: {dog_description}\nTemperament: {dog_temperament}'}
             ]
         )
-        dog_attributes = attributes.choices[0].message.content
-        backend.dogs[dog_name] = {"description": dog_description, "breed": dog_breed, "age": dog_age,
-                                  "temperament": dog_temperament, "attributes": json.loads(dog_attributes)}
-        write_json(dog_name, backend.dogs.get(dog_name))
-        return "OK"
+        dog_attributes = json.loads(gpt_attributes.choices[0].message.content)
+        energy_level = dog_attributes["energy_level"]
+        playfulness = dog_attributes["playfulness"]
+        intelligence = dog_attributes["intelligence"]
+        temperament = dog_attributes["temperament"]
+        trainability = dog_attributes["trainability"]
+        new_dog_values = {
+            "name": dog_name,
+            "description": dog_description,
+            "temperament": dog_temperament,
+            "breed": dog_breed,
+            "energy_level": energy_level,
+            "playfulness": playfulness,
+            "intelligence": intelligence,
+            "trainability": trainability,
+            "age": dog_age,
+            "temperament_attribute": temperament
+        }
+        dogs_cursor.execute(f'''
+    INSERT INTO dogs (
+        name, description, temperament, breed, 
+        energy_level, playfulness, intelligence, trainability, age, temperament_attribute
+    ) VALUES (
+        '{new_dog_values["name"]}', '{new_dog_values["description"]}', '{new_dog_values["temperament"]}',
+        '{new_dog_values["breed"]}', '{new_dog_values["energy_level"]}',
+        '{new_dog_values["playfulness"]}', '{new_dog_values["intelligence"]}', '{new_dog_values["trainability"]}',
+        {new_dog_values["age"]}, '{new_dog_values["temperament_attribute"]}'
+)''')
+        dogs_database.commit()
+        return "DOG ADDED"
     else:
         return "Name already taken, add something unique!"
-
-
-def write_json(dog_name, dog_data):
-    with open('example_dogs.json', 'r') as file:
-        data = json.load(file)
-    new_data = {
-        dog_name:
-            dog_data
-    }
-    data.update(new_data)
-    with open('example_dogs.json', 'w') as file:
-        json.dump(data, file, indent=2)
-    print("JSON file updated!")
 
 
 @app.route('/api/usercheck', methods=['GET'])
