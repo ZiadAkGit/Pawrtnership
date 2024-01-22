@@ -91,6 +91,8 @@ function getData() {
 				const username = data["username"];
 				const dogs = data["dogs"];
 				if (username != "admin") {
+					// Add permission for admin only to add new dogs,
+					// then add admins account into the sql database.
 					console.log(`Hey ${username}, Don't even try!`);
 				}
 				Object.entries(dogs).forEach((dog) => {
