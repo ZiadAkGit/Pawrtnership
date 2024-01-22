@@ -7,7 +7,6 @@ import ignore as backend
 import json
 import sqlite3
 
-
 app = Flask(__name__)
 CORS(app)
 openai.api_key = backend.openai_key
@@ -24,6 +23,19 @@ def dogs_data(ip):
         "dogs": dogs_cursor.execute('''SELECT * FROM dogs''').fetchall()
     }
     return data
+
+
+@app.route('/api/sign_out', methods=['POST'])
+def sign_out():
+    ip = request.remote_addr
+    user = users_cursor.execute(f'''SELECT username FROM logged_users where ip="{ip}"''').fetchone()[0]
+    print(user)
+    if user:
+        users_cursor.execute(f'''DELETE FROM logged_users WHERE username="{user}"''')
+        users_database.commit()
+        return "OK"
+    else:
+        return f'No {user} is logged in!'
 
 
 @app.route('/api/data', methods=['GET'])
@@ -47,7 +59,8 @@ def quiz_submission():
         playfulness = dogs_cursor.execute(f'''SELECT playfulness FROM dogs where name="{i[0]}"''').fetchall()[0][0]
         intelligence = dogs_cursor.execute(f'''SELECT intelligence FROM dogs where name="{i[0]}"''').fetchall()[0][0]
         trainability = dogs_cursor.execute(f'''SELECT trainability FROM dogs where name="{i[0]}"''').fetchall()[0][0]
-        temperament = dogs_cursor.execute(f'''SELECT temperament_attribute FROM dogs where name="{i[0]}"''').fetchall()[0][0]
+        temperament = \
+        dogs_cursor.execute(f'''SELECT temperament_attribute FROM dogs where name="{i[0]}"''').fetchall()[0][0]
         dog_attributes = {'energy_level': energy_level, 'playfulness': playfulness,
                           'intelligence': intelligence, 'temperament': temperament, 'trainability': trainability}
         if dog_attributes == client_attributes:
@@ -173,4 +186,3 @@ def get_users():
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=False, port=5000)
-

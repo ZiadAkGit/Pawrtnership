@@ -98,7 +98,6 @@ textarea {
 
 button {
 	margin: 0 auto;
-	display: inline;
 	background-color: #4caf50;
 	color: #fff;
 	border: none;
@@ -110,6 +109,16 @@ button {
 
 #reset-btn {
 	background-color: red;
+	padding: 10px;
+	margin-right: 40px;
+	display: inline-block;
+}
+
+#submit-btn {
+	background-color: #4caf50;
+	display: inline-block;
+	padding: 10px;
+	margin-left: 40px;
 }
 
 button:hover {
@@ -118,8 +127,8 @@ button:hover {
 
 ul {
 	list-style: none;
-	padding: 0;
-	margin-top: 20px;
+	padding: 10px;
+	margin: 0 auto;
 }
 
 #dogDetailsContainer {
@@ -167,50 +176,50 @@ ul {
 }
 
 .login-container {
+	max-width: 20dvw;
 	margin: 0 auto;
 	text-align: center;
 	width: 40vw;
 }
 
-.login-container form {
-	padding-top: 20px;
-}
-
 /* Media Queries */
 @media screen and (max-width: 768px) {
 	header {
-		display: flex;
+		display: block;
 		justify-content: center;
 		align-items: center;
-		flex-direction: row;
-		max-width: fit-content;
+		flex-direction: column;
+		max-width: 100%;
 	}
 
 	header a {
-		margin: 0 auto;
+		margin: 10px 0;
 	}
 
 	body {
-		max-width: 90svw;
+		max-width: 100%;
 		margin: 0 auto;
 		height: 100svh;
 		overflow: auto;
 	}
 
+	button {
+		padding: 20px;
+	}
+
 	.quiz-container {
 		display: block;
+		max-width: 100svw;
 		padding-left: 10px;
 		padding-right: 10px;
-		height: 100svh;
 		overflow-y: auto;
 		scroll-behavior: smooth;
 	}
 
 	.dog-list-container {
 		display: block;
-		padding-left: 10px;
-		padding-right: 10px;
-		height: 60svh;
+		height: 55svh;
+		margin: 0 auto;
 		overflow-y: auto;
 		scroll-behavior: smooth;
 	}
@@ -220,15 +229,30 @@ ul {
 		box-shadow: none;
 	}
 
-	.loginForm form {
+	.login-container {
+		max-width: 70dvw;
 		margin: 0 auto;
-		padding-top: 200px;
+		text-align: center;
 	}
 
-	.container,
-	.dog_breed,
-	.login-container {
-		max-width: 100%;
+	.dog_breed {
+		max-width: 80vw;
+		margin: 0 auto;
+		margin-top: 10px;
+	}
+
+	#reset-btn {
+		background-color: red;
+		padding: 20px;
+		margin-right: 40px;
+		display: inline-block;
+	}
+
+	#submit-btn {
+		background-color: #4caf50;
+		display: inline-block;
+		padding: 20px;
+		margin-left: 40px;
 	}
 }
 

@@ -65,6 +65,22 @@ if (window.location.href.includes("index.html")) {
 		});
 }
 
+
+function signOut() {
+	fetch(`${currentProtocol}//${currentHost}:5000/api/sign_out`, {
+		method: "POST",
+		body: "SignOut",
+	})
+		.then((response) => response.text())
+		.then((responseData) => {
+			if (responseData == "OK") {
+				console.log("User has been signed out");
+				window.location.href = "index.html";
+			} else alert(responseData);
+		});
+}
+
+
 function getData() {
 	if (quiz_submit != "Quiz Submited") {
 		const dogListContainer = document.getElementById("dogList");
@@ -76,8 +92,8 @@ function getData() {
 				const dogs = data["dogs"];
 				console.log(`Hey ${username}, Don't even try!`);
 				Object.entries(dogs).forEach((dog) => {
-					dog_name = dog[0];
-					dog_breed = dog[1]["breed"];
+					dog_name = dog["name"];
+					dog_breed = dog["breed"];
 					const listItem = document.createElement("li");
 					listItem.className = "dog_breed";
 					listItem.textContent = `${dog_name} the ${dog_breed}`;
@@ -212,7 +228,6 @@ if (window.location.href.includes("dashboard.html")) {
 				getData();
 			} else {
 				window.location.replace("index.html");
-				console.log(`Data is: ${data}`);
 			}
 		})
 		.catch(function (error) {
