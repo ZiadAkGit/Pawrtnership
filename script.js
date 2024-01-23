@@ -1,7 +1,12 @@
 const currentHost = window.location.hostname;
 const currentProtocol = window.location.protocol;
 const h1_welcome = document.getElementById("welcoming_message");
+let username = "";
 var currentPage = window.location.href;
+let dogs_chosen = localStorage.getItem("dogs_chosen");
+let quiz_submit = localStorage.getItem("submited");
+let username_logged = localStorage.getItem("username_logged");
+
 if (currentPage.includes("dashboard.html")) {
 	document.getElementById("dashboardLink").classList.add("active");
 } else if (currentPage.includes("quiz.html")) {
@@ -10,18 +15,17 @@ if (currentPage.includes("dashboard.html")) {
 	document.getElementById("dogsLink").classList.add("active");
 }
 
-let dogs_chosen = localStorage.getItem("dogs_chosen");
-let quiz_submit = localStorage.getItem("submited");
-let username_logged = localStorage.getItem("username_logged");
-
-
-if (username_logged != "admin") {
-	const header = document.getElementsByTagName("header")[0];
-	const add_a_dog = document.getElementById("dogsLink");
-	header.removeChild(add_a_dog);
+if (username_logged != "admin" && !window.location.href.includes("index.html")) {
 	console.log(`Hey ${username_logged}, Don't even try!`);
+} else if (!window.location.href.includes("index.html") && username_logged === "admin"
+	&& !currentPage.includes("dogs.html")) {
+	let addDogHeader = document.createElement('a');
+	addDogHeader.href = 'dogs.html';
+	addDogHeader.id = 'dogsLink';
+	addDogHeader.textContent = 'Add a Dog';
+	const header = document.getElementsByTagName("header")[0];
+	header.appendChild(addDogHeader);
 }
-
 
 async function get_users(username, password) {
 	try {
@@ -86,6 +90,7 @@ function signOut() {
 		.then((responseData) => {
 			if (responseData == "OK") {
 				console.log("User has been signed out");
+				localStorage.removeItem("username_logged");
 				window.location.href = "index.html";
 			} else alert(responseData);
 		});
@@ -99,7 +104,7 @@ function getData() {
 		fetch(`${currentProtocol}//${currentHost}:5000/api/data`)
 			.then((response) => response.json())
 			.then((data) => {
-				const username = data["username"];
+				username = data["username"][0][0];
 				localStorage.setItem("username_logged", username);
 				const dogs = data["dogs"];
 				for (const dog in dogs) {
@@ -122,6 +127,7 @@ function getData() {
 				return error;
 			});
 	} else {
+		localStorage.setItem("username_logged", username);
 		const dogListContainer = document.getElementById("dogList");
 		dogListContainer.innerHTML = "";
 		const result_dog = JSON.parse(dogs_chosen);
@@ -225,9 +231,10 @@ function addDog() {
 async function checkAuthentication() {
 	let check = true;
 	await fetch(`${currentProtocol}//${currentHost}:5000/api/usercheck`)
-		.then((response) => response.text())
+		.then((response) => response.json())
 		.then((data) => {
-			if (data === "OK") {
+			if (data["message"] === "OK") {
+				username = data["username"]
 				check = true;
 			} else {
 				check = false;
@@ -242,11 +249,20 @@ if (window.location.href.includes("dashboard.html")) {
 			if (data) {
 				getData();
 			} else {
-				window.location.replace("index.html");
+				console.log("User must be logged in!");
 			}
 		})
 		.catch(function (error) {
 			alert("Error accord\nPlease login again", console.log(error));
 			window.location.replace("index.html");
 		});
+}
+else if (window.location.href.includes("dogs.html")
+	|| window.location.href.includes("quiz.html")) {
+	if (username_logged) {
+		console.log("User logged in!");
+	} else {
+		alert("Error accord\nPlease login again");
+		window.location.replace("index.html");
+	}
 }

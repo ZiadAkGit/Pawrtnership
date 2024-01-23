@@ -29,7 +29,7 @@ def dogs_data(ip):
 def sign_out():
     ip = request.remote_addr
     user = users_cursor.execute(f'''SELECT username FROM logged_users where ip="{ip}"''').fetchone()[0]
-    print(user)
+    print(f'{user} has been signed out from {ip}')
     if user:
         users_cursor.execute(f'''DELETE FROM logged_users WHERE username="{user}"''')
         users_database.commit()
@@ -148,13 +148,9 @@ def add_dog():
 @app.route('/api/usercheck', methods=['GET'])
 def user_check():
     ip = request.remote_addr
-    user = users_cursor.execute(f'''
-        SELECT username from logged_users
-        where ip = "{ip}"
-    ''').fetchall()[0][0]
+    user = users_cursor.execute(f'''SELECT username from logged_users where ip = "{ip}"''').fetchone()[0]
     if user:
-        print("Everything is good!")
-        return "OK"
+        return json.dumps({"message": "OK", "username": user})
     else:
         return "No Good!"
 
@@ -169,7 +165,7 @@ def get_users():
     for user in users:
         if username == str(user[0]).strip():
             chosen_password = users_cursor.execute(f'''SELECT password from users 
-            where username="{username}"''').fetchall()[0][0]
+            where username="{username}"''').fetchone()[0]
             if password == chosen_password:
                 print(f'{username} has been logged in from {ip}')
                 users_cursor.execute(f'''
