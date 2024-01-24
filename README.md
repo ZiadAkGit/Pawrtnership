@@ -37,4 +37,4 @@ I appreciate your interest! While this repository is not open source, I welcome 
 
 For inquiries and support, please contact me at ziad@pawrtnership.com.
 
-Join me on this journey to make Pawrtnershipes and create forever homes for our furry friends! 🐾
+Join me on this journey to make Pawrtnershipes and create forever homes for our furry friends! 🐾 [![Pawrtnership](https://img.shields.io/badge/Portfolio-Visit-brightgreen)](http://www.pawrtnership.com)
