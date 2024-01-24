@@ -234,7 +234,7 @@ async function checkAuthentication() {
 		.then((response) => response.json())
 		.then((data) => {
 			if (data["message"] === "OK") {
-				username = data["username"]
+				username = data["username"];
 				check = true;
 			} else {
 				check = false;
@@ -260,7 +260,7 @@ if (window.location.href.includes("dashboard.html")) {
 else if (window.location.href.includes("dogs.html")
 	|| window.location.href.includes("quiz.html")) {
 	if (username_logged) {
-		console.log("User logged in!");
+		return;
 	} else {
 		alert("Error accord\nPlease login again");
 		window.location.replace("index.html");
