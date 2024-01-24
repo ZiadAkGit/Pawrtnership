@@ -1,13 +1,13 @@
 # Pawrtnership
-Proprietary code for Pawfect Match, a platform connecting dog shelters with adopters. Features include a comprehensive dog database, detailed profiles, and an advanced matching algorithm. Join us in making countless pawfect matches and forever homes.
+Proprietary code for Pawrtnership, a platform connecting dog shelters with adopters. Features include a comprehensive dog database, detailed profiles, and an advanced matching algorithm. Join us in making countless Pawrtnershipes and forever homes.
 
 # Intro
 
-Welcome to Pawfect Match, where technology meets compassion to create lasting connections between dogs and their forever homes.
+Welcome to Pawrtnership, where technology meets compassion to create lasting connections between dogs and their forever homes.
 
 ## Overview
 
-Pawfect Match is a web application designed to streamline the dog adoption process. Shelters can showcase their furry residents, complete with detailed profiles and unique attributes. Adopters, on the other hand, can experience a tailored journey thanks to our advanced matching algorithm.
+Pawrtnership is a web application designed to streamline the dog adoption process. Shelters can showcase their furry residents, complete with detailed profiles and unique attributes. Adopters, on the other hand, can experience a tailored journey thanks to our advanced matching algorithm.
 
 ## Key Features
 
@@ -28,13 +28,13 @@ git clone https://github.com/ZiadAkGit/Pawfect-Match.git
 	- python server.py
 - Navigate to the project directory in Visual Studio Code.
 - Open the `index.html` file.
-- Right-click on the file and select "Open with Live Server" to experience Pawfect Match.
+- Right-click on the file and select "Open with Live Server" to experience Pawrtnership.
 
 3. **Contribute:**
-I appreciate your interest! While this repository is not open source, I welcome collaboration. Reach out to me for opportunities to enhance Pawfect Match.
+I appreciate your interest! While this repository is not open source, I welcome collaboration. Reach out to me for opportunities to enhance Pawrtnership.
 
 ## Contact
 
 For inquiries and support, please contact me at ziadakgit@gmail.com.
 
-Join me on this journey to make pawfect matches and create forever homes for our furry friends! 🐾
+Join me on this journey to make Pawrtnershipes and create forever homes for our furry friends! 🐾
