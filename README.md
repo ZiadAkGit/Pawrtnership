@@ -20,7 +20,7 @@ Pawrtnership is a web application designed to streamline the dog adoption proces
 ## Getting Started
 
 1. **Clone the Repository:**
-git clone https://github.com/ZiadAkGit/Pawfect-Match.git
+git clone https://github.com/ZiadAkGit/Pawrtnership.git
 
 2. **Run the Application:**
 - Navigate to the project directory in your terminal.
