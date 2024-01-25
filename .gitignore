@@ -7,3 +7,4 @@ users.db
 # Ignore the .idea directory
 .idea/
 __pycache__/
+users.db
