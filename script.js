@@ -260,7 +260,7 @@ if (window.location.href.includes("dashboard.html")) {
 else if (window.location.href.includes("dogs.html")
 	|| window.location.href.includes("quiz.html")) {
 	if (username_logged) {
-		return;
+		//Do Nothing!
 	} else {
 		alert("Error accord\nPlease login again");
 		window.location.replace("index.html");
