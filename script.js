@@ -230,7 +230,12 @@ function addDog() {
 async function checkAuthentication() {
 	let check = true;
 	await fetch(`${currentProtocol}//${currentHost}:5000/api/usercheck`)
-		.then((response) => response.json())
+		.then((response) => {
+			response.json();
+			if (response.status === 500) {
+				return "Error 500";
+			}
+		})
 		.then((data) => {
 			if (data["message"] === "OK") {
 				username = data["username"];
@@ -250,22 +255,24 @@ if (window.location.href.includes("dashboard.html") || window.location.href === 
 			} else if (data) {
 				window.location.replace("dashboard.html");
 			}
+			else if (data === "Error 500") {
+				console.error("Backend Issue\n", data);
+			}
 			else {
 				console.log("User must be logged in!");
 			}
 		})
-		.catch(function (error) {
+		.catch(error => {
 			if (username_logged) {
 				localStorage.removeItem("username_logged");
 			}
-			alert("Error accord\nPlease login again", console.log(error));
-			window.location.replace(`${currentProtocol}//${currentHost}/`);
+			console.log(`Error is: ${error}`);
+			alert("Error!\nContact Support");
 		});
 }
 else if (window.location.href.includes("dogs.html")
 	|| window.location.href.includes("quiz.html")) {
 	if (!username_logged) {
-		alert("Error accord\nPlease login again");
 		window.location.replace(`${currentProtocol}//${currentHost}/`);
 	}
 }
