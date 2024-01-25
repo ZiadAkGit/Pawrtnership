@@ -15,10 +15,9 @@ if (currentPage.includes("dashboard.html")) {
 	document.getElementById("dogsLink").classList.add("active");
 }
 
-if (username_logged != "admin" && !window.location.href.includes("index.html")) {
+if (username_logged != "admin") {
 	console.log(`Hey ${username_logged}, Don't even try!`);
-} else if (!window.location.href.includes("index.html") && username_logged === "admin"
-	&& !currentPage.includes("dogs.html")) {
+} else if (username_logged === "admin" && window.location.href.includes("dashboard.html")) {
 	let addDogHeader = document.createElement('a');
 	addDogHeader.href = 'dogs.html';
 	addDogHeader.id = 'dogsLink';
@@ -69,7 +68,10 @@ function showChosenDogs(dogs) {
 	return result;
 }
 
-if (window.location.href.includes("index.html")) {
+if (window.location.href === `${currentProtocol}//${currentHost}/`) {
+if(username_logged){
+console.log("username should be redirected to dashboard");
+}
 	document
 		.getElementById("password")
 		.addEventListener("keypress", function (event) {
@@ -91,7 +93,7 @@ function signOut() {
 			if (responseData == "OK") {
 				console.log("User has been signed out");
 				localStorage.removeItem("username_logged");
-				window.location.href = "index.html";
+				window.location.replace("index.html");
 			} else alert(responseData);
 		});
 }
@@ -243,12 +245,15 @@ async function checkAuthentication() {
 	return check;
 }
 
-if (window.location.href.includes("dashboard.html")) {
+if (window.location.href.includes("dashboard.html") || window.location.href === `${currentProtocol}//${currentHost}/`) {
 	checkAuthentication()
 		.then((data) => {
-			if (data) {
+			if (data && currentPage.includes("dashboard.html")) {
 				getData();
-			} else {
+			}else if(data) {
+				window.location.replace("dashboard.html");
+			}
+			else {
 				console.log("User must be logged in!");
 			}
 		})
@@ -260,12 +265,9 @@ if (window.location.href.includes("dashboard.html")) {
 else if (window.location.href.includes("dogs.html")
 	|| window.location.href.includes("quiz.html")) {
 	if (username_logged) {
-		//Do Nothing!
+		//Do nothing :)
 	} else {
 		alert("Error accord\nPlease login again");
 		window.location.replace("index.html");
 	}
-} else if (!(window.location.href.includes("dogs.html") ||
-	window.location.href.includes("quiz.html")) && username_logged) {
-	window.location.href.replace("dashboard.html");
 }
