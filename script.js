@@ -69,9 +69,6 @@ function showChosenDogs(dogs) {
 }
 
 if (window.location.href === `${currentProtocol}//${currentHost}/`) {
-if(username_logged){
-console.log("username should be redirected to dashboard");
-}
 	document
 		.getElementById("password")
 		.addEventListener("keypress", function (event) {
@@ -93,7 +90,7 @@ function signOut() {
 			if (responseData == "OK") {
 				console.log("User has been signed out");
 				localStorage.removeItem("username_logged");
-				window.location.replace("index.html");
+				window.location.replace(`${currentProtocol}//${currentHost}/`);
 			} else alert(responseData);
 		});
 }
@@ -250,7 +247,7 @@ if (window.location.href.includes("dashboard.html") || window.location.href === 
 		.then((data) => {
 			if (data && currentPage.includes("dashboard.html")) {
 				getData();
-			}else if(data) {
+			} else if (data) {
 				window.location.replace("dashboard.html");
 			}
 			else {
@@ -258,16 +255,17 @@ if (window.location.href.includes("dashboard.html") || window.location.href === 
 			}
 		})
 		.catch(function (error) {
+			if (username_logged) {
+				localStorage.removeItem("username_logged");
+			}
 			alert("Error accord\nPlease login again", console.log(error));
-			window.location.replace("index.html");
+			window.location.replace(`${currentProtocol}//${currentHost}/`);
 		});
 }
 else if (window.location.href.includes("dogs.html")
 	|| window.location.href.includes("quiz.html")) {
-	if (username_logged) {
-		//Do nothing :)
-	} else {
+	if (!username_logged) {
 		alert("Error accord\nPlease login again");
-		window.location.replace("index.html");
+		window.location.replace(`${currentProtocol}//${currentHost}/`);
 	}
 }
