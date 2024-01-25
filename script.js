@@ -265,7 +265,7 @@ else if (window.location.href.includes("dogs.html")
 		alert("Error accord\nPlease login again");
 		window.location.replace("index.html");
 	}
-} else if ((window.location.href.includes("index.html")
-	|| window.location.href === `${currentProtocol}//${currentHost}.com`) && username_logged) {
-	window.location.href = "dashboard.html";
+} else if (!(window.location.href.includes("dogs.html") ||
+	window.location.href.includes("quiz.html")) && username_logged) {
+	window.location.href.replace("dashboard.html");
 }
