@@ -17,11 +17,14 @@ if (currentPage.includes("dashboard.html")) {
 
 if (username_logged != "admin") {
 	console.log(`Hey ${username_logged}, Don't even try!`);
-} else if (username_logged === "admin" && window.location.href.includes("dashboard.html")) {
-	let addDogHeader = document.createElement('a');
-	addDogHeader.href = 'dogs.html';
-	addDogHeader.id = 'dogsLink';
-	addDogHeader.textContent = 'Add a Dog';
+} else if (
+	username_logged === "admin" &&
+	window.location.href.includes("dashboard.html")
+) {
+	let addDogHeader = document.createElement("a");
+	addDogHeader.href = "dogs.html";
+	addDogHeader.id = "dogsLink";
+	addDogHeader.textContent = "Add a Dog";
 	const header = document.getElementsByTagName("header")[0];
 	header.appendChild(addDogHeader);
 }
@@ -79,7 +82,6 @@ if (window.location.href === `${currentProtocol}//${currentHost}/`) {
 		});
 }
 
-
 function signOut() {
 	fetch(`${currentProtocol}//${currentHost}:5000/api/sign_out`, {
 		method: "POST",
@@ -94,7 +96,6 @@ function signOut() {
 			} else alert(responseData);
 		});
 }
-
 
 function getData() {
 	if (quiz_submit != "Quiz Submited") {
@@ -112,7 +113,7 @@ function getData() {
 						breed: dogs[dog][4],
 						description: dogs[dog][1],
 						temperament: `${dogs[dog][2]}, ${dogs[dog][3]}`,
-						age: dogs[dog][9]
+						age: dogs[dog][9],
 					};
 					const listItem = document.createElement("li");
 					listItem.className = "dog_breed";
@@ -155,7 +156,7 @@ async function login() {
 			window.location.href = "dashboard.html";
 		} else {
 			spinner.style.display = "none";
-			alert(`Backend is not connected\nPlease contact support!`);
+			alert(values);
 		}
 	} else {
 		alert("Fill in Username and Password!");
@@ -191,8 +192,7 @@ function addDog() {
 	if (dogNameInput && dogBreedInput && dogDescriptionInput) {
 		const dogListContainer = document.getElementById("dogList");
 		const listItem = document.createElement("li");
-		const dog =
-		{
+		const dog = {
 			dog_name: dogNameInput,
 			description: dogDescriptionInput,
 			temperament: dogTemperamentInput,
@@ -231,10 +231,7 @@ async function checkAuthentication() {
 	let check = true;
 	await fetch(`${currentProtocol}//${currentHost}:5000/api/usercheck`)
 		.then((response) => {
-			response.json();
-			if (response.status === 500) {
-				return "Error 500";
-			}
+			return response.json();
 		})
 		.then((data) => {
 			if (data["message"] === "OK") {
@@ -247,31 +244,33 @@ async function checkAuthentication() {
 	return check;
 }
 
-if (window.location.href.includes("dashboard.html") || window.location.href === `${currentProtocol}//${currentHost}/`) {
+if (
+	window.location.href.includes("dashboard.html") ||
+	window.location.href === `${currentProtocol}//${currentHost}/`
+) {
 	checkAuthentication()
 		.then((data) => {
 			if (data && currentPage.includes("dashboard.html")) {
 				getData();
 			} else if (data) {
 				window.location.replace("dashboard.html");
-			}
-			else if (data === "Error 500") {
+			} else if (data === "Error 500") {
 				console.error("Backend Issue\n", data);
-			}
-			else {
+			} else {
 				console.log("User must be logged in!");
 			}
 		})
-		.catch(error => {
+		.catch((error) => {
 			if (username_logged) {
 				localStorage.removeItem("username_logged");
 			}
 			console.log(`Error is: ${error}`);
 			alert("Error!\nContact Support");
 		});
-}
-else if (window.location.href.includes("dogs.html")
-	|| window.location.href.includes("quiz.html")) {
+} else if (
+	window.location.href.includes("dogs.html") ||
+	window.location.href.includes("quiz.html")
+) {
 	if (!username_logged) {
 		window.location.replace(`${currentProtocol}//${currentHost}/`);
 	}
