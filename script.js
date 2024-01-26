@@ -265,7 +265,6 @@ if (
 				localStorage.removeItem("username_logged");
 			}
 			console.log(`Error is: ${error}`);
-			alert("Error!\nContact Support");
 		});
 } else if (
 	window.location.href.includes("dogs.html") ||
