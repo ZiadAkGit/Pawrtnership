@@ -140,6 +140,7 @@ def add_dog():
 def user_check():
     ip = request.remote_addr
     user = users_cursor.execute(f'''SELECT username from logged_users where ip = "{ip}"''').fetchone()[0]
+    print(user)
     if user:
         return json.dumps({"message": "OK", "username": user})
     else:
