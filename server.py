@@ -10,8 +10,8 @@ import sqlite3
 app = Flask(__name__)
 CORS(app)
 openai.api_key = backend.openai_key
-dogs_database = sqlite3.connect('/var/www/pawrtnership/dogs_database.db', check_same_thread=False)
-users_database = sqlite3.connect('/var/www/pawrtnership/users.db', check_same_thread=False)
+dogs_database = sqlite3.connect('dogs_database.db', check_same_thread=False)
+users_database = sqlite3.connect('users.db', check_same_thread=False)
 dogs_cursor = dogs_database.cursor()
 users_cursor = users_database.cursor()
 
@@ -176,6 +176,7 @@ def get_users():
 
 
 if __name__ == '__main__':
-    context = ("/etc/letsencrypt/archive/pawrtnership.com/cert2.pem", 
-               "/etc/letsencrypt/archive/pawrtnership.com/privkey2.pem")
-    app.run(host='pawrtnership.com', debug=False, port=5000, ssl_context=context)
+    # context = ("/etc/letsencrypt/archive/pawrtnership.com/cert2.pem", 
+    #            "/etc/letsencrypt/archive/pawrtnership.com/privkey2.pem")
+    # , ssl_context=context
+    app.run(host='0.0.0.0', debug=False, port=5000)
