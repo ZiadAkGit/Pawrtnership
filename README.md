@@ -1,5 +1,5 @@
 # Pawrtnership
-Proprietary code for Pawrtnership, a platform connecting dog shelters with adopters. Features include a comprehensive dog database, detailed profiles, and an advanced matching algorithm. Join us in making countless Pawrtnershipes and forever homes.
+Proprietary code for Pawrtnership, a platform connecting dog shelters with adopters. Features include a comprehensive dog database, detailed profiles, and an advanced matching algorithm. Join us in making countless Pawrtnerships and forever homes.
 
 # Intro
 
@@ -37,4 +37,4 @@ I appreciate your interest! While this repository is not open source, I welcome 
 
 For inquiries and support, please contact me at ziad@pawrtnership.com.
 
-Join me on this journey to make Pawrtnershipes and create forever homes for our furry friends! 🐾 [![Pawrtnership](https://img.shields.io/badge/Website-Visit-brightgreen)](http://www.pawrtnership.com)
+Join me on this journey to make Pawrtnerships and create forever homes for our furry friends! 🐾 [![Pawrtnership](https://img.shields.io/badge/Pawrtnership-Website-blue)](https://pawrtnership.com)
